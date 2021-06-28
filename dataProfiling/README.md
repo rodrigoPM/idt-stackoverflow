@@ -101,7 +101,7 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 | 13  | posts_wiki_placeholder     | 5                 | 5.63 KB   | 20     | No          |
 | 14  | stackoverflow_posts        | 31,017,889        | 31.52 GB  | 20     | Yes         |
 | 15  | tags                       | 60,534            | 2.48 MB   | 5      | Yes         |
-| 16  | votes                      | 208,577,841       | 6.67 GB   | 4      | Yes         |  
+| 16  | votes                      | 208,577,841       | 6.67 GB   | 4      | Yes         |
 
 ### 1.2.2. Data dictionary
 
@@ -109,55 +109,155 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 ##### 1.2.2.1.1. badges
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.2. comments
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.1.3. posts_answers
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.4. posts_moderator_nomination
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.1.5. posts_orphaned_tag_wiki
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.6. post_history
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.1.7. post_links
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.8. users
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.1.9. posts_privilege_wiki
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.10. posts_questions
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.1.11. posts_tag_wiki
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.12. posts_tag_wiki_excerpt
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.1.13. posts_wiki_placeholder
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.14. stackoverflow_posts
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.1.15. tags
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.1.16. votes
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 #### 1.2.2.2. Source: XML
 
 ##### 1.2.2.2.1. badges
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.2.2. comments
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.2.3. postHistory
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.2.4. postLink
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.2.5. post
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.2.6. tags
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ##### 1.2.2.2.7. user
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.2.8. view_archive_cleaner
 
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
+
 ##### 1.2.2.2.9. votes
+
+| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |              |            |            |             |
 
 ## 1.3. Data profiling results
 
@@ -165,55 +265,155 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 #### 1.3.1.1. badges
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.2. comments
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.1.3. posts_answers
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.4. posts_moderator_nomination
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.1.5. posts_orphaned_tag_wiki
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.6. post_history
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.1.7. post_links
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.8. users
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.1.9. posts_privilege_wiki
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.10. posts_questions
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.1.11. posts_tag_wiki
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.12. posts_tag_wiki_excerpt
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.1.13. posts_wiki_placeholder
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.14. stackoverflow_posts
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.1.15. tags
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.1.16. votes
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 ### 1.3.2. Source: XML
 
 #### 1.3.2.1. badges
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.2.2. comments
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.2.3. postHistory
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.2.4. postLink
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.2.5. post
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.2.6. tags
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 #### 1.3.2.7. user
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.2.8. view_archive_cleaner
 
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
+
 #### 1.3.2.9. votes
+
+| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
+| -------------- | ---- | ----------------------------------- | ------ | ---------- |
+|                |      |                                     |        |            |
 
 ## 1.4. Specification of analytical needs that the proposed model will solve
 
@@ -223,16 +423,48 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 ### 1.6.1. Dim_Question
 
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |
+
 ### 1.6.2. Dim_user
+
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |
 
 ### 1.6.3. Dim_tag
 
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |
+
 ### 1.6.4. Dim_tag_bridge
+
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |
 
 ### 1.6.5. Dim_Time
 
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |
+
 ### 1.6.6. Dim_Date
+
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |
 
 ### 1.6.7. Fact_Done_Question
 
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |
+
 ### 1.6.8. Fact_Done_Answer
+
+| Column name | Type | Source | Comment | Sample |
+| ----------- | ---- | ------ | ------- | ------ |
+|             |      |        |         |        |

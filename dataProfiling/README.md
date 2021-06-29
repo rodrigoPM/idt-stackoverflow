@@ -921,6 +921,10 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 ### 1.6.8. Fact_Done_Answer
 
+- **Descripción:** Contiene todos los eventos que ocurren en el  proceso de negocio respuesta hecha
+- **Granularidad:** un registro representa una respuesta
+- **Política de unicidad:** El Etl construirá un registro en la fact table basado en las nuevas respuestas a las preguntas hechas  en StakOverflow.
+
 | Column name | Type | Source | Comment | Sample |
 | ----------- | ---- | ------ | ------- | ------ |
 |  time_key   | String     | Dim_Time.time_key       | Foreign key pointing to Dim_Time        |-        |

@@ -109,155 +109,309 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 ##### 1.2.2.1.1. badges
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.2. comments
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.3. posts_answers
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.4. posts_moderator_nomination
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.5. posts_orphaned_tag_wiki
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.6. post_history
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.7. post_links
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.8. users
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.9. posts_privilege_wiki
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.10. posts_questions
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.11. posts_tag_wiki
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
+| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
+|                |      |              |            |            |             |
 
 ##### 1.2.2.1.12. posts_tag_wiki_excerpt
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name           | Type     | Is mandatory | Is primary | Is foreign | Description                                                  |
+| ------------------------ | -------- | ------------ | ---------- | ---------- | ------------------------------------------------------------ |
+| Id                       | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla                     |
+| Title                    | Varchar  | Yes          | No         | No         | Descripción el titulo                                        |
+| Body                     | Varchar  | Yes          | No         | No         | Cuerpo del extracto de la wiki                               |
+| accepted_answer_id       | Integer  | Yes          | No         | Yes        | Identificador de la respuesta aceptada                       |
+| answer_count             | Integer  | Yes          | No         | No         | Conteo de las respuestas del post                            |
+| comment_count            | Integer  | Yes          | No         | No         | Conteo de los comentarios recibidos por el post              |
+| community_owned_date     | Datatime | Yes          | No         | No         | Fecha y Hora de las acciones en la comunidad                 |
+| creation_date            | Datatime | Yes          | No         | No         | Fecha y Hora de creación                                     |
+| favorite_count           | Integer  | Yes          | No         | No         | Conteo de favoritos                                          |
+| last_activity_date       | Datatime | Yes          | No         | No         | Fecha y Hora de la última actividad                          |
+| last_edit_date           | Datatime | Yes          | No         | No         | Fecha y Hora de la última edición                            |
+| last_editor_display_name | Varchar  | Yes          | No         | No         | Nombre del ultimo editor del post                            |
+| last_editor_user_id      | Integer  | Yes          | No         | Yes        | Identificador del ultimo usuario que llevo a cabo la edición |
+| owner_display_name       | Varchar  | Yes          | No         | No         | Nombre del dueño del post o evento de la consulta            |
+| parent_id                | Integer  | Yes          | No         | Yes        | Identificador padre                                          |
+| post_type_id             | Integer  | Yes          | No         | Yes        | Identificador del tipo de post                               |
+| score                    | Integer  | Yes          | No         | No         | Puntaje                                                      |
+| Tags                     | Varchar  | Yes          | No         | No         | Etiquetas                                                    |
+| View_count               | Integer  | Yes          | No         | No         | Conteo de vistas del post                                    |
+
 
 ##### 1.2.2.1.13. posts_wiki_placeholder
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name           | Type     | Is mandatory | Is primary | Is foreign | Description                                                  |
+| ------------------------ | -------- | ------------ | ---------- | ---------- | ------------------------------------------------------------ |
+| id                       | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla                     |
+| title                    | Varchar  | Yes          | No         | No         | Descripción el titulo                                        |
+| body                     | Varchar  | Yes          | No         | No         | Cuerpo del placeholder con la wiki                           |
+| accepted_answer_id       | Integer  | Yes          | No         | Yes        | Identificador de la respuesta aceptada                       |
+| answer_count             | Integer  | Yes          | No         | No         | Conteo de las respuestas del post                            |
+| comment_count            | Integer  | Yes          | No         | No         | Conteo de los comentarios recibidos por el post              |
+| community_owned_date     | Datatime | Yes          | No         | No         | Fecha y Hora de las acciones en la comunidad                 |
+| creation_date            | Datatime | Yes          | No         | No         | Fecha y Hora de creación                                     |
+| favorite_count           | Integer  | Yes          | No         | No         | Conteo de favoritos                                          |
+| last_activity_date       | Datatime | Yes          | No         | No         | Fecha y Hora de la última actividad                          |
+| last_edit_date           | Datatime | Yes          | No         | No         | Fecha y Hora de la última edición                            |
+| last_editor_display_name | Varchar  | Yes          | No         | No         | Nombre del ultimo editor del post                            |
+| last_editor_user_id      | Integer  | Yes          | No         | Yes        | Identificador del ultimo usuario que llevo a cabo la edición |
+| owner_display_name       | Varchar  | Yes          | No         | No         | Nombre del dueño del post o evento de la consulta            |
+| parent_id                | Integer  | Yes          | No         | Yes        | Identificador padre                                          |
+| post_type_id             | Integer  | Yes          | No         | Yes        | Identificador del tipo de post                               |
+| score                    | Integer  | Yes          | No         | No         | Puntaje                                                      |
+| Tags                     | Varchar  | Yes          | No         | No         | Etiquetas                                                    |
+| View_count               | Integer  | Yes          | No         | No         | Conteo de vistas del post                                    |
+
 
 ##### 1.2.2.1.14. stackoverflow_posts
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name           | Type     | Is mandatory | Is primary | Is foreign | Description                                                  |
+| ------------------------ | -------- | ------------ | ---------- | ---------- | ------------------------------------------------------------ |
+| id                       | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla                     |
+| title                    | Varchar  | Yes          | No         | No         | Descripción el titulo                                        |
+| body                     | Varchar  | Yes          | No         | No         | Cuerpo de los posts de stackoverflow                         |
+| accepted_answer_id       | Integer  | Yes          | No         | Yes        | Identificador de la respuesta aceptada                       |
+| answer_count             | Integer  | Yes          | No         | No         | Conteo de las respuestas del post                            |
+| comment_count            | Integer  | Yes          | No         | No         | Conteo de los comentarios recibidos por el post              |
+| community_owned_date     | Datatime | Yes          | No         | No         | Fecha y Hora de las acciones en la comunidad                 |
+| creation_date            | Datatime | Yes          | No         | No         | Fecha y Hora de creación                                     |
+| favorite_count           | Integer  | Yes          | No         | No         | Conteo de favoritos                                          |
+| last_activity_date       | Datatime | Yes          | No         | No         | Fecha y Hora de la última actividad                          |
+| last_edit_date           | Datatime | Yes          | No         | No         | Fecha y Hora de la última edición                            |
+| last_editor_display_name | Varchar  | Yes          | No         | No         | Nombre del ultimo editor del post                            |
+| last_editor_user_id      | Integer  | Yes          | No         | Yes        | Identificador del ultimo usuario que llevo a cabo la edición |
+| owner_display_name       | Varchar  | Yes          | No         | No         | Nombre del dueño del post o evento de la consulta            |
+| parent_id                | Integer  | Yes          | No         | Yes        | Identificador padre                                          |
+| post_type_id             | Integer  | Yes          | No         | Yes        | Identificador del tipo de post                               |
+| score                    | Integer  | Yes          | No         | No         | Puntaje                                                      |
+| Tags                     | Varchar  | Yes          | No         | No         | Etiquetas                                                    |
+| View_count               | Integer  | Yes          | No         | No         | Conteo de vistas del post                                    |
+
 
 ##### 1.2.2.1.15. tags
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name  | Type    | Is mandatory | Is primary | Is foreign | Description                              |
+| --------------- | ------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Id              | Integer | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| Tag_name        | Varchar | Yes          | No         | No         | Nombre de la etiqueta                    |
+| Count           | Integer | Yes          | No         | No         | Conteo de la etiqueta                    |
+| Excerpt_post_id | Integer | No           | No         | Yes        | Identificador del extracto del post      |
+| Wiki_post_id    | Integer | No           | No         | Yes        | Identificador de la wiki del post        |
+
 
 ##### 1.2.2.1.16. votes
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Id             | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| Creation_date  | Datatime | Yes          | No         | No         | Fecha de creación del voto               |
+| Post_id        | Integer  | Yes          | No         | Yes        | Identificador del post                   |
+| Vote_type_id   | Integer  | Yes          | No         | Yes        | Indentificador del tipo de voto          |
+
 
 #### 1.2.2.2. Source: XML
 
 ##### 1.2.2.2.1. badges
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metamodel_surrogate_id | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| class                      | Integer  | Yes          | No         | No         | Numeración de Categoría                  |
+| Date                       | Datatime | Yes          | No         | No         | Descripción de Fecha y Hora              |
+| Id                         | Integer  | Yes          | No         | Yes        | Identificador foráneo                    |
+| Name                       | Varchar  | Yes          | No         | No         | Descripción de nombre                    |
+| TagBased                   | Boolean  | Yes          | No         | No         | Indicador del estado actual              |
+
 
 ##### 1.2.2.2.2. comments
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metamodel_surrogate_id | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| ContentLicense             | Varchar  | Yes          | No         | No         | Descripción de la licencia               |
+| CreationDate               | Datatime | Yes          | No         | No         | Fecha y Hora de creación                 |
+| Id                         | Integer  | Yes          | No         | Yes        | Identificador                            |
+| PostId                     | Integer  | Yes          | No         | Yes        | Identificador del post                   |
+| Score                      | Integer  | Yes          | No         | No         | Conteo                                   |
+| Text                       | Varchar  | Yes          | No         | No         | Descripción del post                     |
+| UserId                     | Integer  | Yes          | No         | Yes        | Identificador de usuario                 |
+| UserDisplayName            | Varchar  | Yes          | No         | No         | Username del dueño del post              |
+
 
 ##### 1.2.2.2.3. postHistory
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metamodel_surrogate_id | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| ContentLicense             | Varchar  | Yes          | No         | No         | Descripción de la licencia               |
+| CreationDate               | Datatime | No           | No         | Fecha      | y hora de creación                       |
+| Id                         | Integer  | Yes          | No         | Yes        | Identificador                            |
+| postHistoryTypeId          | Integer  | Yes          | No         | Yes        | Identificador                            |
+| PostId                     | Integer  | Yes          | No         | Yes        | Identificador                            |
+| RevisionGUID               | Integer  | Yes          | No         | Yes        | Identificador                            |
+| text                       | Varchar  | Yes          | No         | No         | Descripción del post                     |
+| UserId                     | Integer  | Yes          | No         | Yes        | Identificador de usuario                 |
+| Comment                    | Varchar  | Yes          | No         | No         | Descripción de las acciones              |
+| UserDisplayName            | Varchar  | Yes          | No         | No         | Username del usuario                     |
+
 
 ##### 1.2.2.2.4. postLink
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metamodel_surrogate_id | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| creationDate               | Datatime | Yes          | No         | No         | Fecha y hora de creación                 |
+| Id                         | Integer  | Yes          | No         | No         | Identificador                            |
+| LinkTypeId                 | Integer  | Yes          | No         | Yes        | Identificador                            |
+| PostId                     | Integer  | Yes          | No         | Yes        | Identificador                            |
+
 
 ##### 1.2.2.2.5. post
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type     | Is mandatory | Is primary | Is foreign | Description                                                          |
+| -------------------------- | -------- | ------------ | ---------- | ---------- | -------------------------------------------------------------------- |
+| Row_metamodel_surrogate_id | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla                             |
+| AnswerCount                | Integer  | Yes          | No         | No         | Conteo de respuestas                                                 |
+| Body                       | Varchar  | Yes          | No         | No         | Descripción completa del post elaborado                              |
+| CommentCount               | Integer  | Yes          | No         | No         | Conteo de comentarios                                                |
+| ContentLicense             | Varchar  | Yes          | No         | No         | Descripción de la licencia                                           |
+| CreationDate               | Datatime | Yes          | No         | No         | Fecha y hora de creación del post                                    |
+| FavoriteCount              | Integer  | Yes          | No         | Yes        | Conteo de favoritos                                                  |
+| Id                         | Integer  | Yes          | No         | No         | Identificador                                                        |
+| LastActivityDate           | Datatime | Yes          | No         | No         | Fecha y hora de la última actividad                                  |
+| OwnerUserId                | Integer  | Yes          | No         | Yes        | Identificador de usuario                                             |
+| PostTypeId                 | Integer  | Yes          | No         | Yes        | Identificador del post                                               |
+| Score                      | Integer  | Yes          | No         | No         | Puntaje                                                              |
+| Tags                       | Varchar  | Yes          | No         | No         | Etiquetas del post                                                   |
+| Title                      | Varchar  | Yes          | No         | No         | Título del post                                                      |
+| ViewCount                  | Integer  | Yes          | No         | No         | Conteo de visitas                                                    |
+| AcceptedAnswerId           | Integer  | Yes          | No         | Yes        | Identificador de respuesta aceptada                                  |
+| LastEditDate               | Datatime | Yes          | No         | No         | Fecha y Hora de la última edición                                    |
+| LastEditorUserId           | Integer  | Yes          | No         | Yes        | Identificador del ultimo usuario que realizo la operación de edición |
+| ParentId                   | Integer  | Yes          | No         | Yes        | Identificador padre                                                  |
+| CommunityOwnerDate         | Datatime | Yes          | No         | No         | Fecha y Hora de actividad de la comunidad                            |
+| ClosedDate                 | Datatime | Yes          | No         | No         | Fecha y Hora de cierre                                               |
+| LastEditorDisplayName      | Varchar  | Yes          | No         | No         | Nombre del ultimo editor                                             |
+| OwnerDisplayName           | Varchar  | Yes          | No         | No         | Username                                                             |
+
 
 ##### 1.2.2.2.6. tags
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type    | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | ------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metamodel_surrogate_id | Integer | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| Count                      | Integer | Yes          | No         | No         | Conteo                                   |
+| ExceptPostId               | Integer | Yes          | No         | Yes        | Identificador de excepción de post       |
+| Id                         | Integer | Yes          | No         | Yes        | Identificador                            |
+| IsRequired                 | Boolean | Yes          | No         | No         | Estado                                   |
+| TagName                    | Varchar | Yes          | No         | No         | Nombre de tag                            |
+| WikiPostId                 | Integer | Yes          | No         | Yes        | Identificador de post de wiki            |
+| IsModeratorOnly            | Boolean | Yes          | No         | No         | Estado de moderador                      |
+
 
 ##### 1.2.2.2.7. user
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metadodel_surrogate_id | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| AboutMe                    | Varchar  | Yes          | No         | No         | Descripción del usuario                  |
+| AccountId                  | Integer  | Yes          | No         | Yes        | Identificador de cuenta                  |
+| CreationDate               | Datatime | Yes          | No         | No         | Fecha y Hora de creación                 |
+| DisplayName                | Varchar  | Yes          | No         | No         | Nombre del usuario                       |
+| DownVotes                  | Integer  | Yes          | No         | No         | Número de votos bajos                    |
+| Id                         | Integer  | Yes          | No         | Yes        | Identificador                            |
+| LastAccessDate             | Datatime | Yes          | No         | No         | Fecha y Hora del ultimo acceso           |
+| Location                   | Datatime | Yes          | No         | No         | Localidad de donde se realizó el post    |
+| Reputation                 | Integer  | Yes          | No         | No         | Numero de reputación                     |
+| UpVotes                    | Integer  | Yes          | No         | No         | Número de votos altos                    |
+| Views                      | Integer  | Yes          | No         | No         | Numero de vistas                         |
+| WebsiteUrl                 | Varchar  | Yes          | No         | No         | Descripción de URL                       |
+| ProfileImageUrl            | Varchar  | Yes          | No         | No         | Descripción de URL de imágenes           |
+
 
 ##### 1.2.2.2.8. view_archive_cleaner
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type    | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | ------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metadodel_surrogate_id | Integer | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| Count                      | Integer | Yes          | No         | No         | Conteo                                   |
+| ExceptPostId               | Integer | Yes          | No         | Yes        | Identificador de excepción               |
+| Id                         | Integer | Yes          | No         | Yes        | Identificador                            |
+| TagName                    | Varchar | Yes          | No         | No         | Nombre del tag                           |
+| WikiPostId                 | Integer | Yes          | No         | Yes        | Identificador de post                    |
+
 
 ##### 1.2.2.2.9. votes
 
-| Attribute name | Type | Is mandatory | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |              |            |            |             |
+| Attribute name             | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| -------------------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| Row_metadodel_surrogate_id | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| CreationDate               | Datatime | Yes          | No         | No         | Fecha y Hora de creación                 |
+| Id                         | Integer  | Yes          | No         | No         | Identificador                            |
+| PostId                     | Integer  | Yes          | No         | Yes        | Identificador de tipo de post            |
+| VoteTypeId                 | Integer  | Yes          | No         | Yes        | Identificador de tipo de voto            |
+| UserId                     | Integer  | Yes          | No         | Yes        | Identificador de usuario                 |
+
 
 ## 1.3. Data profiling results
 

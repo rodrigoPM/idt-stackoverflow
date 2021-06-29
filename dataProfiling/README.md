@@ -485,33 +485,103 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 #### 1.3.1.12. posts_tag_wiki_excerpt
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name           | Type     | Proportion of valid (valid / total) | Result                                   | Conclusion             |
+| ------------------------ | -------- | ----------------------------------- | ---------------------------------------- | ---------------------- |
+| id                       | Integer  | 100%                                | Todos válidos, pero hay pocos registros. | No se puede usar en MD |
+| Title                    | Varchar  | 0%                                  | Todos son nulos                          | No se puede usar en MD |
+| body                     | Varchar  | 100%                                | Todos válidos, pero hay pocos registros  | No se puede usar en MD |
+| accepted_answer_id       | Integer  | 0%                                  | Todos son nulos                          | No se puede usar en MD |
+| answer_count             | Integer  | 0%                                  | Todos son nulos                          | No se puede usar en MD |
+| comment_count            | Integer  | 100%                                | Todos válidos, pero hay pocos registros  | No se puede usar en MD |
+| community_owned_date     | Datatime | 0%                                  | Todos son nulos                          | No se puede usar en MD |
+| creation_date            | Datatime | 100%                                | Todos válidos, pero hay pocos registros  | No se puede usar en MD |
+| favorite_count           | Integer  | 0%                                  | Todos son nulos                          | No se puede usar en MD |
+| last_activity_date       | Datatime | 100%                                | Todos válidos, pero hay pocos registros  | No se puede usar en MD |
+| last_edit_date           | Datatime | 100%                                | Todos válidos, pero hay pocos registros. | No se puede usar en MD |
+| last_editor_display_name | Varchar  | 0%                                  | Todos son nulos.                         | No se puede usar en MD |
+| last_editor_user_id      | Integer  | 100%                                | Todos válidos, pero hay pocos registros. | No se puede usar en MD |
+| owner_display_name       | Varchar  | 0%                                  | Todos son nulos.                         | No se puede usar en MD |
+| Owner_user_id            | Integer  | 100%                                | Todos válidos, pero hay pocos registros. | No se puede usar en MD |
+| parent_id                | Integer  | 0%                                  | Todos son nulos.                         | No se puede usar en MD |
+| post_type_id             | Integer  | 100%                                | Todos válidos, pero hay pocos registros. | No se puede usar en MD |
+| score                    | Integer  | 100%                                | Todos válidos, pero hay pocos registros. | No se puede usar en MD |
+| tags                     | Varchar  | 0%                                  | Todos son nulos.                         | No se puede usar en MD |
+| view_count               | Integer  | 0%                                  | Todos son nulos.                         | No se puede usar en MD |
+
 
 #### 1.3.1.13. posts_wiki_placeholder
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name           | Type     | Proportion of valid (valid / total) | Result                                                                                 | Conclusion             |
+| ------------------------ | -------- | ----------------------------------- | -------------------------------------------------------------------------------------- | ---------------------- |
+| id                       | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| Title                    | Varchar  | 1%                                  | Mayoría nulos                                                                          | No se puede usar en MD |
+| body                     | Varchar  | 92%                                 | La mayoría de registros tienen datos, pero requerirá limpieza para los que están nulos | Requiere  limpieza     |
+| accepted_answer_id       | Integer  | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+| answer_count             | Integer  | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+| comment_count            | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| community_owned_date     | Datatime | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+| creation_date            | Datatime | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| favorite_count           | Integer  | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+| last_activity_date       | Datatime | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| last_edit_date           | Datatime | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| last_editor_display_name | Varchar  | 1%                                  | Mayoría nulos                                                                          | No se puede usar en MD |
+| last_editor_user_id      | Integer  | 99%                                 | Todos válidos, pero hay pocos registros                                                | Requiere limpieza      |
+| owner_display_name       | Varchar  | 1%                                  | Mayoría nulos                                                                          | No se puede usar en MD |
+| Owner_user_id            | 99       | %	La mayoría                        | de registros tienen datos, pero requerirá limpieza para los que están nulos            | Requiere  limpieza     |
+| parent_id                | Integer  | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+| post_type_id             | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| score                    | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| tags                     | Varchar  | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+| view_count               | Integer  | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+
+
 
 #### 1.3.1.14. stackoverflow_posts
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name           | Type     | Proportion of valid (valid / total) | Result                                                                                 | Conclusion             |
+| ------------------------ | -------- | ----------------------------------- | -------------------------------------------------------------------------------------- | ---------------------- |
+| id                       | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| Title                    | Varchar  | 38%                                 | Muchos nulos, pero se puede rescatar                                                   | Requiere limpieza      |
+| body                     | Varchar  | 100%                                | La mayoría de registros tienen datos, pero requerirá limpieza para los que están nulos | Apto para MD           |
+| accepted_answer_id       | Integer  | 21%                                 | Mayoría nulos                                                                          | No se puede usar en MD |
+| answer_count             | Integer  | 38%                                 | Muchos nulos, pero se puede rescatar                                                   | Requiere limpieza      |
+| comment_count            | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| community_owned_date     | Datatime | 0%                                  | Todos son nulos                                                                        | No se puede usar en MD |
+| creation_date            | Datatime | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| favorite_count           | Integer  | 9%                                  | Mayoría nulos                                                                          | No se puede usar en MD |
+| last_activity_date       | Datatime | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| last_edit_date           | Datatime | 36%                                 | Muchos nulos, pero se puede rescatar                                                   | Requiere limpieza      |
+| last_editor_display_name | Varchar  | 1%                                  | Mayoría nulos                                                                          | No se puede usar en MD |
+| last_editor_user_id      | Integer  | 36%                                 | Muchos nulos, pero se puede rescatar                                                   | Requiere limpieza      |
+| owner_display_name       | Varchar  | 2%                                  | Mayoría nulos                                                                          | No se puede usar en MD |
+| Owner_user_id            | 99       | %	La mayoría                        | de registros tienen datos, pero requerirá limpieza para los que están nulos            | Requiere  limpieza     |
+| parent_id                | Integer  | 62%                                 | Mayoría validos                                                                        | Requiere limpieza      |
+| post_type_id             | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| score                    | Integer  | 100%                                | Todos válidos                                                                          | Apto para MD           |
+| tags                     | Varchar  | 38%                                 | Muchos nulos, pero se puede rescatar                                                   | Requiere limpieza      |
+| view_count               | Integer  | 38%                                 | Muchos nulos, pero se puede rescatar                                                   | Requiere limpieza      |
+
 
 #### 1.3.1.15. tags
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name  | Type    | Proportion of valid (valid / total) | Result          | Conclusion        |
+| --------------- | ------- | ----------------------------------- | --------------- | ----------------- |
+| id              | Integer | 100%                                | Todos válidos   | Apto para MD      |
+| Tag_name        | Varchar | 100%                                | Todos válidos   | Apto para MD      |
+| count           | Integer | 100%                                | Todos válidos   | Apto para MD      |
+| Excerpt_post_id | Integer | 72%                                 | Mayoría validos | Requiere limpieza |
+| Wiki_post_id    | Integer | 72%                                 | Muchos validos  | Requiere limpieza |
+
 
 #### 1.3.1.16. votes
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name | Type    | Proportion of valid (valid / total) | Result        | Conclusion   |
+| -------------- | ------- | ----------------------------------- | ------------- | ------------ |
+| id             | Integer | 100%                                | Todos válidos | Apto para MD |
+| Creation_date  | Varchar | 100%                                | Todos válidos | Apto para MD |
+| Post_id        | Integer | 100%                                | Todos válidos | Apto para MD |
+| Vote_type_id   | Integer | 100%                                | Todos válidos | Apto para MD |
+
 
 ### 1.3.2. Source: XML
 

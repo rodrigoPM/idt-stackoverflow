@@ -916,19 +916,19 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 | Column name | Type | Source | Comment | Sample |
 | ----------- | ---- | ------ | ------- | ------ |
-|  time_key           | String     | Dim_Time.time_key       | Foreign key pointing to Dim_Time        |-        |
-|  date_key           | String     | Dim_Date.date_key      | Foreign key pointing to Dim_Date        |-        |
-| user_key           | String     | Dim_User.user_key      | Foreign key pointing to Dim_User        |-        |
-|  score            | Integer     | bquery:stakoverflow =>post_answer=>score      | -       |5       |
-|  comment_count           | Integer     |bquery:stakoverflow =>post_answer=comment_count     |  -      |4        |
-|  revision_count| Integer    | bquery:stakoverflow =>post_history       | Calculater ETL       |1        |
-|  favorite_count| Integer    | bquery:stakoverflow =>post_answer=favorite_count     | -      |2       |
-| fact_done_question_key| Integer    | Fact_Done_Question     | Foreing Key pointing to Fact_Done_Question      |-      |
-
+|             |      |        |         |        |
 
 
 ### 1.6.8. Fact_Done_Answer
 
 | Column name | Type | Source | Comment | Sample |
 | ----------- | ---- | ------ | ------- | ------ |
-|             |      |        |         |        |
+|  time_key   | String     | Dim_Time.time_key       | Foreign key pointing to Dim_Time        |-        |
+|  date_key   | String     | Dim_Date.date_key      | Foreign key pointing to Dim_Date        |-        |
+| user_key    | String     | Dim_User.user_key      | Foreign key pointing to Dim_User        |-        |
+|  score      | Integer     | bquery:stakoverflow =>post_answer=>score      | -       |5       |
+|  comment_count           | Integer     |bquery:stakoverflow =>post_answer=comment_count     |  -      |4        |
+|  revision_count| Integer    | bquery:stakoverflow =>post_history       | Calculater ETL       |1        |
+|  favorite_count| Integer    | bquery:stakoverflow =>post_answer=favorite_count     | -      |2       |
+| fact_done_question_key| Integer    | Fact_Done_Question     | Foreing Key pointing to Fact_Done_Question      |-      |
+

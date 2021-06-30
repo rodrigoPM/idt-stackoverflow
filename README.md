@@ -4,4 +4,4 @@ The main objective of the project lies in the need to build a dimensional model 
 
 ## Content
 
-- [1. Profiling](https://github.com/rodrigoPM/idt-stackoverflow/tree/main/dataProfiling)
+- [1. Profiling](dataProfiling)

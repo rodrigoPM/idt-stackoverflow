@@ -874,6 +874,22 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 
 ## 1.4. Specification of analytical needs that the proposed model will solve
 
+Our dimensional model is based on the StackOverflow data set, the needs that it will solve are the following:
+
+- The total of questions asked during a defined period.
+- The percentage of questions that have been answered over the years.
+- The day of the week that you have had the most questions answered within a defined period.
+- Users with the highest reputation.
+- Users who have contributed the most by solving questions for a defined time.
+- The questions that have had the most visits during a period.
+- Which technologies are the most frequently asked questions during a period.
+- The answers with the highest votes during a period.
+- The increase in questions during quarantine compared to previous years.
+- The answers that have received the most feedback.
+
+These are just some of the questions that we could answer, it is hoped that the dimensional model will allow analytical users to be able to answer more types of questions.
+
+
 ## 1.5. Proposed dimensional model
 
 ### 1.5.1. Done Question

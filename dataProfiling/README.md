@@ -104,7 +104,7 @@ The entire dimensional modeling process will be specifically applied in which th
 
 ### 1.2.1. Description
 
-A continuación describiremos con más detalles cada una de las tablas que conforman nuestro dataset de StackOverflow:
+ Below we will describe in more detail each of the tables that make up our StackOverflow dataset:
 
 | N°  | Table name                 | Number of records | Size      | column | Used for MD |
 | --- | -------------------------- | ----------------- | --------- | ------ | ----------- |
@@ -124,6 +124,21 @@ A continuación describiremos con más detalles cada una de las tablas que confo
 | 14  | stackoverflow_posts        | 31,017,889        | 31.52 GB  | 20     | Yes         |
 | 15  | tags                       | 60,534            | 2.48 MB   | 5      | Yes         |
 | 16  | votes                      | 208,577,841       | 6.67 GB   | 4      | Yes         |
+
+Below we will describe in more detail each of the tables that make up our external source through which we will enrich the dataset:
+
+| N° |Table name   |Number of records   |Size   |  column | Used for MD  |
+| ------------ | ------------ | ------------ | ------------| ------------ | ------------ |
+| 1  | Badges   | 15180 | 1.63 MB  |  6|Yes   |
+|   2|  Comments  |  13695 |  4.57 MB  | 9  |No   |
+|   3|  PostsHistory  | 16717  | 23.0 MB |  11 |  Yes |
+|   4|  PostsLink  |  2008 | 216 KB |5  |No   |
+|   5| Posts  |4399  | 8.98 MB  | 23  | Yes   |
+|   6|  Tags |175   |  13.5 KB  | 8  |Yes   |
+|   7|  User | 19638  |7.41 MB   |  14 |Yes   |
+|   8| View_archive_cleaner   | 2690  | 194 KB  |6   |No   |
+|   9|  Votes  |  34074 |  2.92 MB| 6  |Ye   |
+
 
 ### 1.2.2. Data dictionary
 

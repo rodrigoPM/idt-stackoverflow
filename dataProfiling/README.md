@@ -80,6 +80,26 @@
 
 ## 1.1. Introduction to business logic
 
+<p style="text-align:justify">
+
+StackOverflow is a question and answer site for programmers and enthusiasts of the development and use of software was founded in 2008, becoming one of the 50 websites that has a great popularity around the world, fully transforming the way of working of people, we are constantly working to create a kind of library of outlined answers to all questions about programming, developing and using software as such.
+
+Basically the user creates an account to belong to the platform, through that account he can ask the questions that seek to respond to those needs that arise within that day to business day, the user prepares the question and publishes it on the question site , that question becomes a post, consequently this question may have the corresponding answers from the other members of the community, both questions and answers may have points in favor or against, depending on the performance of the user, it can gradually escalate in merits, earning badges that allow you to increase your privileges within the platform, finally becoming a moderator, each question is related to a specialized tag that allows optimizing searches within the community, these tags are usually related to the technologies that ask the most and Answers are generating on the StakOverflow site.
+
+The full meaning of being able to belong to this popular network is to be able at all times to help that group of people who develop within the professions or trades that depend directly on the technology that evolves by leaps and bounds so the needs have grown exponentially That is why the platform increasingly recovers value over time.
+
+The StakOverflow community is an interdisciplinary effort of a group of people working together to be able to add value to the community in the face of the many questions that the site receives, thereby achieving direct help to millions of people in the world by answering all those difficult questions to answer, questions that arise from the need to solve those daily problems that are usually found in work life and of course share knowledge with other people and be able to better continue with their daily activities that their profession, trade or activity demands.
+
+Centralizing the community first of all is one of the values ​​that is most sought to be fulfilled, because in this way healthy communities are promoted that at all times have the sufficient intention to learn and of course give back to the community in a better way as well as adopt a mentality of ethical, sustainable and long-term growth both personally and in the company.
+
+As already mentioned, StackOverflow is a site that has a huge range of opportunities to meet our needs, these needs have been growing in recent years with the exponential curve of users who interact with the new technologies that are emerging over time. , this causes the excessive growth of large amounts or volumes of data, so it is of vital interest to be able to exploit, use or analyze these large volumes of data, analyzes that will yield results on the behavior of this community in recent years, results that will allow reorienting the efforts for the consequent improvement in the operational policies of the platform as such.
+
+That is why a dimensional model will be built that fully represents two very important business processes, one of them is questions asked and the other is answers made, in this way we are basically covering the two main areas of potential analytical interest for the entity. , in such a way that the model will show or have in its presentation layer all the transformed data, structured in such a way that they are consumable by the analytical users, through the construction of a  dashboard , the data will be fully consumed and will be hopes that it satisfies all the needs that users have for data to finally support the strategic decision-making process, it is vitally important to guarantee quality, effectiveness and of course the highest performance so that the model is fully adopted by the StackOverflow community.
+
+The entire dimensional modeling process will be specifically applied in which the business process is dealt with, determination of the level of granularity, identification of dimensions and determination of the metrics that will measure the events that occur in the business process, in this first stage It will cover the entire profiling process on the StackOverflow dataset and the external source with which we will enrich the dataset, the data dictionary of the same to be able to know first-hand table by table and its corresponding structure, in addition, the result of the dimensional modeling through the star schema, finally the mappings process will be covered for each table that will be used to build the dimensional model as such
+
+</p>
+
 ## 1.2. Description of the dataset and data dictionary of the dataset
 
 ### 1.2.1. Description

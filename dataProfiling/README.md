@@ -995,18 +995,20 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 ### 1.6.8. Fact_Done_Answer
 
-- **Descripción:** Contiene todos los eventos que ocurren en el  proceso de negocio respuesta hecha
-- **Granularidad:** un registro representa una respuesta
-- **Política de unicidad:** El Etl construirá un registro en la fact table basado en las nuevas respuestas a las preguntas hechas  en StakOverflow.
+- **Description:**  Contains all the events that occur in the done response business process
+- **Granularity:** a record represents a response
+- **Uniqueness Policy:** Etl will build a record in the fact table based on the new answers to the questions asked in StakOverflow.
+- **Invalidity policy:** All fields are required.
+- **Policy of absence of context:** When a dimension does not apply to a row of the fact, a foreign key will be defined to indicate the absence of data from it.
 
-| Column name            | Type    | Source                                           | Comment                                    | Sample |
-| ---------------------- | ------- | ------------------------------------------------ | ------------------------------------------ | ------ |
-| time_key               | String  | Dim_Time.time_key                                | Foreign key pointing to Dim_Time           | -      |
-| date_key               | String  | Dim_Date.date_key                                | Foreign key pointing to Dim_Date           | -      |
-| user_key               | String  | Dim_User.user_key                                | Foreign key pointing to Dim_User           | -      |
-| score                  | Integer | bquery:stakoverflow =>post_answer=>score         | -                                          | 5      |
-| comment_count          | Integer | bquery:stakoverflow =>post_answer=comment_count  | -                                          | 4      |
-| revision_count         | Integer | bquery:stakoverflow =>post_history               | Calculater ETL                             | 1      |
-| favorite_count         | Integer | bquery:stakoverflow =>post_answer=favorite_count | -                                          | 2      |
-| fact_done_question_key | Integer | Fact_Done_Question                               | Foreing Key pointing to Fact_Done_Question | -      |
+| Column name  | Display name | Type    | Source | Comment                 | Sample   |
+| ------------ | ------------ | ------- | ------ | ----------------------- | -------- |
+|  time_key           |Time key | String     | Dim_Time.time_key       | Foreign key pointing to Dim_Time        |-        |
+|  date_key           | Date key| String     | Dim_Date.date_key      | Foreign key pointing to Dim_Date        |-        |
+| user_key            | User key| String     | Dim_User.user_key      | Foreign key pointing to Dim_User        |-        |
+|  score             | Score| Integer     | bquery:stakoverflow =>post_answer=>score      | -       |5       |
+|  comment_count          |Comment count  | Integer     |bquery:stakoverflow =>post_answer=comment_count     |  -      |4        |
+|  revision_count   |  Revision count| Integer    | bquery:stakoverflow =>post_history       | Calculater ETL       |1        |
+|  favorite_count  | Favorite count| Integer    | bquery:stakoverflow =>post_answer=favorite_count     | -      |2       |
+| fact_done_question_key  |   Fact done question key| Integer    | Fact_Done_Question     | Foreing Key pointing to Fact_Done_Question      |-      |
 

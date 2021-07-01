@@ -247,39 +247,119 @@ Below we will describe in more detail each of the tables that make up our extern
 
 ##### 1.2.2.1.6. post_history
 
-| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |            |            |             |
+| Attribute name       | Type     | Is mandatory | Is primary | Is foreign | Description                                    |
+| -------------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------------- |
+| id                   | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla       |
+| creation_date        | DateTime | Yes          | No         | No         | Fecha y Hora de creación                       |
+| post_id              | Integer  | Yes          | No         | Yes        | Identificador del post                         |
+| post_history_type_id | Integer  | Yes          | No         | Yes        | Identificador del tipo de history              |
+| revision_guid        | Varchar  | Yes          | No         | No         | Identificador de grupo del historial de cambio |
+| user_id              | Varchar  | No           | No         | Yes        | Identificador del usuario                      |
+| text                 | Varchar  | No           | No         | No         | Texto referente al cambio                      |
+| comment              | Varchar  | No           | No         | No         | Comentario opcional                            |
 
 ##### 1.2.2.1.7. post_links
 
-| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |            |            |             |
+| Attribute name  | Type     | Is mandatory | Is primary | Is foreign | Description                                |
+| --------------- | -------- | ------------ | ---------- | ---------- | ------------------------------------------ |
+| id              | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla   |
+| creation_date   | DateTime | Yes          | No         | No         | Fecha y Hora de creación                   |
+| link_type_id    | Integer  | Yes          | No         | Yes        | Identificador del tipo de link             |
+| post_id         | Integer  | Yes          | No         | Yes        | Identificador del post                     |
+| related_post_id | Integer  | Yes          | No         | Yes        | Identificador del post relacionado al post |
 
 ##### 1.2.2.1.8. users
 
-| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |            |            |             |
+| Attribute name    | Type     | Is mandatory | Is primary | Is foreign | Description                              |
+| ----------------- | -------- | ------------ | ---------- | ---------- | ---------------------------------------- |
+| id                | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla |
+| display_name      | Varchar  | Yes          | No         | No         | El nombre a mostrar del usuario          |
+| about_me          | Varchar  | No           | No         | No         | Descripción acerca del usuario           |
+| age               | Varchar  | No           | No         | No         | Edad del usuario                         |
+| creation_date     | DateTime | Yes          | No         | No         | Fecha y Hora de creación                 |
+| last_access_date  | DateTime | Yes          | No         | No         | Fecha y Hora del ultimo acceso al sitio  |
+| location          | Varchar  | No           | No         | No         | Lugar donde vive el usuario              |
+| reputation        | Integer  | Yes          | No         | No         | Reputacion que se ha ganado el usuario   |
+| up_votes          | Integer  | Yes          | No         | No         | Votos a favor                            |
+| down_votes        | Integer  | Yes          | No         | No         | Votos en contra                          |
+| views             | Integer  | Yes          | No         | No         | Visitas que ha tenido en su perfil       |
+| profile_image_url | Varchar  | No           | No         | No         | Avatar del usuario                       |
+| website_url       | Varchar  | No           | No         | No         | Url del sitio web del usuario            |
 
 ##### 1.2.2.1.9. posts_privilege_wiki
 
-| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |            |            |             |
+| Attribute name           | Type     | Is mandatory | Is primary | Is foreign | Description                                                  |
+| ------------------------ | -------- | ------------ | ---------- | ---------- | ------------------------------------------------------------ |
+| id                       | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla                     |
+| title                    | Varchar  | No           | No         | No         | Título de la wiki                                            |
+| body                     | Varchar  | Yes          | No         | No         | Descripción de la wiki                                       |
+| accepted_answer_id       | Integer  | No           | No         | Yes        | Identificador de la respuesta aceptada                       |
+| answer_count             | Integer  | No           | No         | No         | Conteo de las respuestas                                     |
+| comment_count            | Integer  | No           | No         | No         | Conteo de los comentarios                                    |
+| community_owned_date     | DateTime | No           | No         | No         | Fecha y Hora de las acciones en la comunidad                 |
+| creation_date            | DateTime | Yes          | No         | No         | Fecha y Hora de creación                                     |
+| favorite_count           | Integer  | No           | No         | No         | Conteo de favoritos                                          |
+| last_activity_date       | DateTime | Yes          | No         | No         | Fecha y Hora de la última actividad                          |
+| last_edit_date           | DateTime | Yes          | No         | No         | Fecha y Hora de la última edición                            |
+| last_editor_display_name | Varchar  | No           | No         | No         | Nombre del ultimo editor de la wiki                          |
+| last_editor_user_id      | Integer  | Yes          | No         | Yes        | Identificador del ultimo usuario que llevo a cabo la edición |
+| owner_display_name       | Varchar  | No           | No         | No         | Nombre del usuario que creo la wiki                          |
+| owner_user_id            | Integer  | No           | No         | Yes        | Identificador del usuario que creo la wiki                   |
+| parent_id                | Integer  | No           | No         | Yes        | Identificador de la wiki padre                               |
+| post_type_id             | Integer  | Yes          | No         | Yes        | Identificador del tipo de wiki                               |
+| score                    | Integer  | Yes          | No         | No         | Puntaje                                                      |
+| tags                     | Varchar  | No           | No         | No         | Etiquetas                                                    |
+| view_count               | Integer  | No           | No         | No         | Conteo de vistas de la wiki                                  |
 
 ##### 1.2.2.1.10. posts_questions
 
-| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |            |            |             |
+| Attribute name           | Type     | Is mandatory | Is primary | Is foreign | Description                                                  |
+| ------------------------ | -------- | ------------ | ---------- | ---------- | ------------------------------------------------------------ |
+| id                       | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla                     |
+| title                    | Varchar  | Yes          | No         | No         | Título del Post                                              |
+| body                     | Varchar  | Yes          | No         | No         | Descripción del post                                         |
+| accepted_answer_id       | Integer  | No           | No         | Yes        | Identificador de la respuesta aceptada                       |
+| answer_count             | Integer  | Yes          | No         | No         | Conteo de las respuestas                                     |
+| comment_count            | Integer  | Yes          | No         | No         | Conteo de los comentarios                                    |
+| community_owned_date     | DateTime | No           | No         | No         | Fecha y Hora de las acciones en la comunidad                 |
+| creation_date            | DateTime | Yes          | No         | No         | Fecha y Hora de creación                                     |
+| favorite_count           | Integer  | No           | No         | No         | Conteo de favoritos                                          |
+| last_activity_date       | DateTime | Yes          | No         | No         | Fecha y Hora de la última actividad                          |
+| last_edit_date           | DateTime | No           | No         | No         | Fecha y Hora de la última edición                            |
+| last_editor_display_name | Varchar  | No           | No         | No         | Nombre del ultimo editor del post                            |
+| last_editor_user_id      | Integer  | No           | No         | Yes        | Identificador del ultimo usuario que llevo a cabo la edición |
+| owner_display_name       | Varchar  | No           | No         | No         | Nombre del usuario que creo el post                          |
+| owner_user_id            | Integer  | No           | No         | Yes        | Identificador del usuario que creo el post                   |
+| parent_id                | Integer  | No           | No         | Yes        | Identificador del post padre                                 |
+| post_type_id             | Integer  | Yes          | No         | Yes        | Identificador del tipo de post                               |
+| score                    | Integer  | Yes          | No         | No         | Puntaje                                                      |
+| tags                     | Varchar  | Yes          | No         | No         | Etiquetas                                                    |
+| view_count               | Integer  | Yes          | No         | No         | Conteo de vistas del post                                    |
 
 ##### 1.2.2.1.11. posts_tag_wiki
 
-| Attribute name | Type | Is mandatory | Is primary | Is foreign | Description |
-| -------------- | ---- | ------------ | ---------- | ---------- | ----------- |
-|                |      |              |            |            |             |
+| Attribute name           | Type     | Is mandatory | Is primary | Is foreign | Description                                                  |
+| ------------------------ | -------- | ------------ | ---------- | ---------- | ------------------------------------------------------------ |
+| id                       | Integer  | Yes          | Yes        | No         | Identificador de llave primaria de tabla                     |
+| title                    | Varchar  | No           | No         | No         | Título del tag de wiki                                       |
+| body                     | Varchar  | No           | No         | No         | Descripción del tag de wiki                                  |
+| accepted_answer_id       | Integer  | No           | No         | Yes        | Identificador de la respuesta aceptada                       |
+| answer_count             | Integer  | No           | No         | No         | Conteo de las respuestas                                     |
+| comment_count            | Integer  | Yes          | No         | No         | Conteo de los comentarios                                    |
+| community_owned_date     | DateTime | No           | No         | No         | Fecha y Hora de las acciones en la comunidad                 |
+| creation_date            | DateTime | Yes          | No         | No         | Fecha y Hora de creación                                     |
+| favorite_count           | Integer  | No           | No         | No         | Conteo de favoritos                                          |
+| last_activity_date       | DateTime | Yes          | No         | No         | Fecha y Hora de la última actividad                          |
+| last_edit_date           | DateTime | Yes          | No         | No         | Fecha y Hora de la última edición                            |
+| last_editor_display_name | Varchar  | No           | No         | No         | Nombre del ultimo editor del tag wiki                        |
+| last_editor_user_id      | Integer  | No           | No         | Yes        | Identificador del ultimo usuario que llevo a cabo la edición |
+| owner_display_name       | Varchar  | No           | No         | No         | Nombre del usuario que creo el tag wiki                      |
+| owner_user_id            | Integer  | No           | No         | Yes        | Identificador del usuario que creo el tag wiki               |
+| parent_id                | Integer  | No           | No         | Yes        | Identificador del post padre                                 |
+| post_type_id             | Integer  | Yes          | No         | Yes        | Identificador del tipo de wiki                               |
+| score                    | Integer  | Yes          | No         | No         | Puntaje                                                      |
+| tags                     | Varchar  | No           | No         | No         | Etiquetas                                                    |
+| view_count               | Integer  | No           | No         | No         | Conteo de vistas de la wiki                                  |
 
 ##### 1.2.2.1.12. posts_tag_wiki_excerpt
 
@@ -632,39 +712,119 @@ Below we will describe in more detail each of the tables that make up our extern
 
 #### 1.3.1.6. post_history
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name       | Type     | Proportion of valid (valid / total) | Result                                                 | Conclusion        |
+| -------------------- | -------- | ----------------------------------- | ------------------------------------------------------ | ----------------- |
+| id                   | Integer  | 100%                                | Registros 100% válidos                                 | Apto para MD      |
+| creation_date        | DateTime | 100%                                | Registros 100% válidos                                 | Apto para MD      |
+| post_id              | Integer  | 100%                                | Registros 100% válidos                                 | Apto para MD      |
+| post_history_type_id | Integer  | 100%                                | Registros 100% válidos                                 | Apto para MD      |
+| revision_guid        | Varchar  | 100%                                | Registros 100% válidos                                 | Apto para MD      |
+| user_id              | Varchar  | 95%                                 | Registros 95% válidos, campo aporta valor analítico    | Requiere limpieza |
+| text                 | Varchar  | 96%                                 | Registros 96% válidos, campo no aporta valor analítico | No apto para MD   |
+| comment              | Varchar  | 31%                                 | Registros 31% válidos                                  | No apto para MD   |
 
 #### 1.3.1.7. post_links
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name  | Type     | Proportion of valid (valid / total) | Result                 | Conclusion   |
+| --------------- | -------- | ----------------------------------- | ---------------------- | ------------ |
+| id              | Integer  | 100%                                | Registros 100% válidos | Apto para MD |
+| creation_date   | DateTime | 100%                                | Registros 100% válidos | Apto para MD |
+| link_type_id    | Integer  | 100%                                | Registros 100% válidos | Apto para MD |
+| post_id         | Integer  | 100%                                | Registros 100% válidos | Apto para MD |
+| related_post_id | Integer  | 100%                                | Registros 100% válidos | Apto para MD |
 
 #### 1.3.1.8. users
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name    | Type     | Proportion of valid (valid / total) | Result                                               | Conclusion        |
+| ----------------- | -------- | ----------------------------------- | ---------------------------------------------------- | ----------------- |
+| id                | Integer  | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| display_name      | Varchar  | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| about_me          | Varchar  | 9%                                  | Registros 9% válidos                                 | No apto para MD   |
+| age               | Varchar  | 0%                                  | Registros 0% válidos                                 | No apto para MD   |
+| creation_date     | DateTime | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| last_access_date  | DateTime | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| location          | Varchar  | 25%                                 | Registros 25% válidos, campo no se puede dar formato | No apto para MD   |
+| reputation        | Integer  | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| up_votes          | Integer  | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| down_votes        | Integer  | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| views             | Integer  | 100%                                | Registros 100% válidos                               | Apto para MD      |
+| profile_image_url | Varchar  | 84%                                 | Registros 84% válidos, campo se usará en dashboard   | Requiere limpieza |
+| website_ur        | Varchar  | 6%                                  | Registros 6% válidos                                 | No apto para MD   |
 
 #### 1.3.1.9. posts_privilege_wiki
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name           | Type     | Proportion of valid (valid / total) | Result                                            | Conclusion      |
+| ------------------------ | -------- | ----------------------------------- | ------------------------------------------------- | --------------- |
+| id                       | Integer  | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| title                    | Varchar  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| body                     | Varchar  | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| accepted_answer_id       | Integer  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| answer_count             | Integer  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| comment_count            | Integer  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| community_owned_date     | DateTime | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| creation_date            | DateTime | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| favorite_count           | Integer  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| last_activity_date       | DateTime | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| last_edit_date           | DateTime | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| last_editor_display_name | Varchar  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| last_editor_user_id      | Integer  | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| owner_display_name       | Varchar  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| owner_user_id            | Integer  | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| parent_id                | Integer  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| post_type_id             | Integer  | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| score                    | Integer  | 100%                                | Registros 100% válidos, sin embargo son muy pocos | No apto para MD |
+| tags                     | Varchar  | 0%                                  | Registros 0% válidos                              | No apto para MD |
+| view_count               | Integer  | 0%                                  | Registros 0% válidos                              | No apto para MD |
 
 #### 1.3.1.10. posts_questions
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name           | Type     | Proportion of valid (valid / total) | Result                                                | Conclusion        |
+| ------------------------ | -------- | ----------------------------------- | ----------------------------------------------------- | ----------------- |
+| id                       | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| title                    | Varchar  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| body                     | Varchar  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| accepted_answer_id       | Integer  | 51%                                 | Registros 51% válidos, campo aporta valor analítico   | Requiere limpieza |
+| answer_count             | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| comment_count            | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| community_owned_date     | DateTime | 0.1%                                | Registros 0.1% válidos                                | No apto para MD   |
+| creation_date            | DateTime | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| favorite_count           | Integer  | 22.1%                               | Registros 22% válidos                                 | Requiere limpieza |
+| last_activity_date       | DateTime | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| last_edit_date           | DateTime | 54.8%                               | Registros 54.8% válidos, campo aporta valor analítico | Requiere limpieza |
+| last_editor_display_name | Varchar  | 1.1%                                | Registros 1.1% válidos                                | No apto para MD   |
+| last_editor_user_id      | Integer  | 54%                                 | Registros 54% válidos, no aporta valor analítico      | No apto para MD   |
+| owner_display_name       | Varchar  | 2%                                  | Registros 2% válidos                                  | No apto para MD   |
+| owner_user_id            | Integer  | 98%                                 | Registros 98% válidos, aporta valor analítico         | Requiere limpieza |
+| parent_id                | Integer  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
+| post_type_id             | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| score                    | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| tags                     | Varchar  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| view_count               | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
 
 #### 1.3.1.11. posts_tag_wiki
 
-| Attribute name | Type | Proportion of valid (valid / total) | Result | Conclusion |
-| -------------- | ---- | ----------------------------------- | ------ | ---------- |
-|                |      |                                     |        |            |
+| Attribute name           | Type     | Proportion of valid (valid / total) | Result                                                | Conclusion        |
+| ------------------------ | -------- | ----------------------------------- | ----------------------------------------------------- | ----------------- |
+| id                       | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| title                    | Varchar  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
+| body                     | Varchar  | 72%                                 | Registros 72% válidos, no genera valor analítico      | No apto para MD   |
+| accepted_answer_id       | Integer  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
+| answer_count             | Integer  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
+| comment_count            | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| community_owned_date     | DateTime | 0.6%                                | Registros 0.6% válidos                                | No apto para MD   |
+| creation_date            | DateTime | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| favorite_count           | Integer  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
+| last_activity_date       | DateTime | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| last_edit_date           | DateTime | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| last_editor_display_name | Varchar  | 1.1%                                | Registros 1.1% válidos                                | No apto para MD   |
+| last_editor_user_id      | Integer  | 92.2%                               | Registros 92.2% válidos, campo aporta valor analítico | Requiere limpieza |
+| owner_display_name       | Varchar  | 0.6%                                | Registros 0.6% válidos                                | No apto para MD   |
+| owner_user_id            | Integer  | 99.4%                               | Registros 99.4% válidos, campo aporta valor analítico | Requiere limpieza |
+| parent_id                | Integer  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
+| post_type_id             | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| score                    | Integer  | 100%                                | Registros 100% válidos                                | Apto para MD      |
+| tags                     | Varchar  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
+| view_count               | Integer  | 0%                                  | Registros 0% válidos                                  | No apto para MD   |
 
 #### 1.3.1.12. posts_tag_wiki_excerpt
 

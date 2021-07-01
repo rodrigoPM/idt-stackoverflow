@@ -70,7 +70,7 @@
     - [1.5.2. Star schema 2](#152-star-schema-2)
   - [1.6. Mapping by table](#16-mapping-by-table)
     - [1.6.1. Dim_Question](#161-dim_question)
-    - [1.6.2. Dim_user](#162-dim_user)
+    - [1.6.2. Dim_User](#162-dim_user)
     - [1.6.3. Dim_tag](#163-dim_tag)
     - [1.6.4. Dim_tag_bridge](#164-dim_tag_bridge)
     - [1.6.5. Dim_Time](#165-dim_time)
@@ -1113,15 +1113,47 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 ### 1.6.1. Dim_Question
 
-| Column name | Type | Source | Comment | Sample |
-| ----------- | ---- | ------ | ------- | ------ |
-|             |      |        |         |        |
+- **Description:** Save the context of the question asked
+- **Granularity:** a record represents a question post
+- **Uniqueness policy:** the etl will search the questions and assign a surrogate key when this question is not stored in the dimension.
+- **Invalidity policy:** All fields are required.
+- **SCD Policy:** All fields will be Slowly Changing Dimension type one.
 
-### 1.6.2. Dim_user
+| Column name        | Display name       | Type     | Source                                                    | Comment                 | Sample            |
+| ------------------ | ------------------ | -------- | --------------------------------------------------------- | ----------------------- | ----------------- |
+| question_key       | Question Key       | String   | -                                                         | Surragate key generated | 68d2e3f           |
+| id_nk              | Id natural key     | Integer  | bigquery:stakoverflow =>post_question=>id                 | Natural Key             | 4                 |
+| title              | Title              | String   | bigquery:stakoverflow =>post_question=>title              | -                       | Null pointer java |
+| body               | Body               | String   | bigquery:stakoverflow =>post_question=>body               | -                       | What is it        |
+| last_activity_date | Last activity date | Datetime | bigquery:stakoverflow =>post_question=>last_activity_date | -                       | 27/06/2021        |
+| last_edit_date     | Last edit date     | Datetime | bigquery:stakoverflow =>post_question=>last_edit_date     | -                       | 27/06/2021        |
 
-| Column name | Type | Source | Comment | Sample |
-| ----------- | ---- | ------ | ------- | ------ |
-|             |      |        |         |        |
+### 1.6.2. Dim_User
+
+- **Description:** Save the context of a user
+- **Granularity:** a record represents a user.
+- **Uniqueness policy:** the etl will look for users and assign a surrogate key when this question is not stored in the dimension.
+- **Invalidity policy:** All fields are required.
+- **SCD Policy:** All fields will be Slowly Changing Dimension type one.
+
+| Column name        | Display name       | Type     | Source                                           | Comment                 | Sample                                 |
+| ------------------ | ------------------ | -------- | ------------------------------------------------ | ----------------------- | -------------------------------------- |
+| user_key           | User key           | String   | -                                                | Surragate key generated | 68d2e3f                                |
+| id_nk              | Id natural key     | Integer  | bigquery:stakoverflow =>users=>id                | Natural Key             | 4                                      |
+| display_name       | Display name       | Integer  | bigquery:stakoverflow =>users=>display_name      | -                       | Henry                                  |
+| creation_date      | Creation date      | Datatime | bigquery:stakoverflow =>users=>creation_date     | -                       | 27/06/2021                             |
+| Reputation         | Reputation         | Integer  | bigquery:stakoverflow =>users=>reputation        | -                       | 10                                     |
+| last_access_date   | Last access date   | Datetime | bigquery:stakoverflow =>users=>last_access_date  | -                       | 27/06/2021                             |
+| down_votes         | Down votes         | Integer  | bigquery:stakoverflow =>users=>down_votes        | -                       | 0                                      |
+| up_votes           | Up votes           | Integer  | bigquery:stakoverflow =>users=>up_votes          | -                       | 1                                      |
+| Views              | Views              | Integer  | bigquery:stakoverflow =>users=>views             | -                       | 1                                      |
+| profile_image_url  | Profile image url  | String   | bigquery:stakoverflow =>users=>profile_image_url | -                       | https://www.gravatar.com/avatar/730d47 |
+| last_gold_badge    | Last gold badge    | String   | bigquery:stakoverflow =>badges                   | Calculater ETL          | student                                |
+| last_silver_badge  | Last silver badge  | String   | bigquery:stakoverflow =>badges                   | Calculater ETL          | supporter                              |
+| last_bronze_badge  | Last bronce badge  | String   | bigquery:stakoverflow =>badges                   | Calculater ETL          | editor                                 |
+| silver_badge_count | Silver badge count | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 2                                      |
+| bronze_badge_count | Bronze badge count | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 2                                      |
+| gold_badge_count   | Gold badge count   | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 1                                      |
 
 ### 1.6.3. Dim_tag
 - **Description:** Store the tags for the questions
@@ -1193,9 +1225,25 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 ### 1.6.7. Fact_Done_Question
 
-| Column name | Type | Source | Comment | Sample |
-| ----------- | ---- | ------ | ------- | ------ |
-|             |      |        |         |        |
+- **Description:** Contains all the events that occur in the question asked business process.
+- **Granularity:** a record represents a question asked
+- **Uniqueness policy:** The Etl will build a record in the fact table based on the new questions that are made in StakOverflow.
+- **Invalidity policy:** All fields are required.
+- **Policy of absence of context:** When a dimension does not apply to a row of the fact, a foreign key will be defined to indicate the absence of data from it.
+
+| Column name    | Display name   | Type    | Source                                               | Comment                                | Sample |
+| -------------- | -------------- | ------- | ---------------------------------------------------- | -------------------------------------- | ------ |
+| time_key       | Time key       | String  | Dim_Time.time_key                                    | Foreign key pointing to Dim_Time       | -      |
+| date_key       | Date key       | String  | Dim_Date.date_key                                    | Foreign key pointing to Dim_Date       | -      |
+| user_key       | User key       | String  | Dim_User.user_key                                    | Foreign key pointing to Dim_User       | -      |
+| question_key   | Question key   | String  | Dim_Question.question_key                            | Foreign key pointing to Dim_Question   | -      |
+| tag_group_key  | Tag group key  | String  | Dim_Tag_Bridge.tag_group_key                         | Foreign key pointing to Dim_Tag_Bridge | -      |
+| answer_count   | Answer count   | Integer | bigquery:stakoverflow =>post_question=>answer_count  | -                                      | 2      |
+| view_count     | View count     | Integer | bigquery:stakoverflow =>post_question=>view_count    | -                                      | 10     |
+| Score          | Score          | Integer | bigquery:stakoverflow =>post_question=>score         | -                                      | 5      |
+| comment_count  | Comment count  | Integer | bigquery:stakoverflow =>post_question=comment_count  | -                                      | 4      |
+| revision_count | Revision count | Integer | bigquery:stakoverflow =>post_history                 | Calculater ETL                         | 1      |
+| favorite_count | Favorite count | Integer | bigquery:stakoverflow =>post_question=favorite_count | -                                      | 2      |
 
 
 ### 1.6.8. Fact_Done_Answer

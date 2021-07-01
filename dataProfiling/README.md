@@ -66,8 +66,8 @@
       - [1.3.2.9. votes](#1329-votes)
   - [1.4. Specification of analytical needs that the proposed model will solve](#14-specification-of-analytical-needs-that-the-proposed-model-will-solve)
   - [1.5. Proposed dimensional model](#15-proposed-dimensional-model)
-    - [1.5.1. Done Question](#151-done-question)
-    - [1.5.2. Done Answer](#152-done-answer)
+    - [1.5.1. Star schema 1](#151-star-schema-1)
+    - [1.5.2. Star schema 2](#152-star-schema-2)
   - [1.6. Mapping by table](#16-mapping-by-table)
     - [1.6.1. Dim_Question](#161-dim_question)
     - [1.6.2. Dim_user](#162-dim_user)
@@ -525,6 +525,9 @@ Below we will describe in more detail each of the tables that make up our extern
 
 ### 1.3.1. Source: Big Query
 
+- **Used Tool:** Google Cloud Dataprep <img height="50" alt="dataprep" src="https://nalin.com.np/assets/img/icons/cloud-dataprep.png" />
+- **Description:** Dataprep is an interactive web application in which users define the data preparation rules by interacting with a sample of their data
+
 #### 1.3.1.1. badges
 
 | Attribute name | Type     | Proportion of valid (valid / total) | Result                                                                                                                                                                                                                                                                                      | Conclusion              |
@@ -734,7 +737,7 @@ Below we will describe in more detail each of the tables that make up our extern
 | last_editor_display_name | Varchar  | 1%                                                                                         | Mayoría nulos                                                                          | No se puede usar en MD |
 | last_editor_user_id      | Integer  | 36%                                                                                        | Muchos nulos, pero se puede rescatar                                                   | Requiere limpieza      |
 | owner_display_name       | Varchar  | 2%                                                                                         | Mayoría nulos                                                                          | No se puede usar en MD |
-| Owner_user_id            | Integer  | 99%	La mayoría de registros tienen datos, pero requerirá limpieza para los que están nulos | Requiere  limpieza                                                                     |
+| Owner_user_id            | Integer  | 99% |	La mayoría de registros tienen datos, pero requerirá limpieza para los que están nulos | Requiere  limpieza                                                                     |
 | parent_id                | Integer  | 62%                                                                                        | Mayoría validos                                                                        | Requiere limpieza      |
 | post_type_id             | Integer  | 100%                                                                                       | Todos válidos                                                                          | Apto para MD           |
 | score                    | Integer  | 100%                                                                                       | Todos válidos                                                                          | Apto para MD           |
@@ -764,6 +767,8 @@ Below we will describe in more detail each of the tables that make up our extern
 
 
 ### 1.3.2. Source: XML
+- **Used Tool:** DataCleaner ![Dataprep](https://www.datacleaner.org/images/dc-logo-50x213.png)
+- **Description:** DataCleaner is a strong data profiling engine for discovering and analyzing the quality of user's data
 
 #### 1.3.2.1. badges
 
@@ -927,11 +932,16 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 ## 1.5. Proposed dimensional model
 
-### 1.5.1. Done Question
+### 1.5.1. Star schema 1
+
+- **Bussiness process:** Done Question
+- **Granularity:** A record corresponds a done question
 
 ![Done Question model](dimensionalModels/doneQuestionModel.png)
 
-### 1.5.2. Done Answer
+### 1.5.2. Star schema 2
+- **Bussiness process:** Done Answer
+- **Granularity:** A record corresponds a done answer
 
 ![Done Answer model](dimensionalModels/doneAnswerModel.png)
 
@@ -1031,7 +1041,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 ### 1.6.8. Fact_Done_Answer
 
 - **Description:**  Contains all the events that occur in the done response business process
-- **Granularity:** a record represents a response
+- **Granularity:** A record represents a answer
 - **Uniqueness Policy:** Etl will build a record in the fact table based on the new answers to the questions asked in StakOverflow.
 - **Invalidity policy:** All fields are required.
 - **Policy of absence of context:** When a dimension does not apply to a row of the fact, a foreign key will be defined to indicate the absence of data from it.

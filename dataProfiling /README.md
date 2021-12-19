@@ -1126,8 +1126,8 @@ These are just some of the questions that we could answer, it is hoped that the 
 | id_nk              | Id natural key     | Integer  | bigquery:stakoverflow =>post_question=>id                 | Natural Key             | 4                 |
 | title              | Title              | String   | bigquery:stakoverflow =>post_question=>title              | -                       | Null pointer java |
 | body               | Body               | String   | bigquery:stakoverflow =>post_question=>body               | -                       | What is it        |
-| last_activity_date | Last activity date | Datetime | bigquery:stakoverflow =>post_question=>last_activity_date | -                       | 27/06/2021        |
-| last_edit_date     | Last edit date     | Datetime | bigquery:stakoverflow =>post_question=>last_edit_date     | -                       | 27/06/2021        |
+| last_activity_date | Last activity date | Date     | bigquery:stakoverflow =>post_question=>last_activity_date | -                       | 27/06/2021        |
+| last_edit_date     | Last edit date     | Date     | bigquery:stakoverflow =>post_question=>last_edit_date     | -                       | 27/06/2021        |
 
 ### 1.6.2. Dim_Answer
 

@@ -70,13 +70,14 @@
     - [1.5.2. Star schema 2](#152-star-schema-2)
   - [1.6. Mapping by table](#16-mapping-by-table)
     - [1.6.1. Dim_Question](#161-dim_question)
-    - [1.6.2. Dim_User](#162-dim_user)
-    - [1.6.3. Dim_tag](#163-dim_tag)
-    - [1.6.4. Dim_tag_bridge](#164-dim_tag_bridge)
-    - [1.6.5. Dim_Time](#165-dim_time)
-    - [1.6.6. Dim_Date](#166-dim_date)
-    - [1.6.7. Fact_Done_Question](#167-fact_done_question)
-    - [1.6.8. Fact_Done_Answer](#168-fact_done_answer)
+    - [1.6.2. Dim_Answer](#162-dim_answer)
+    - [1.6.3. Dim_User](#163-dim_user)
+    - [1.6.4. Dim_tag](#164-dim_tag)
+    - [1.6.5. Dim_tag_bridge](#165-dim_tag_bridge)
+    - [1.6.6. Dim_Time](#166-dim_time)
+    - [1.6.7. Dim_Date](#167-dim_date)
+    - [1.6.8. Fact_Done_Question](#168-fact_done_question)
+    - [1.6.9. Fact_Done_Answer](#169-fact_done_answer)
 
 ## 1.1. Introduction to business logic
 
@@ -1128,7 +1129,25 @@ These are just some of the questions that we could answer, it is hoped that the 
 | last_activity_date | Last activity date | Datetime | bigquery:stakoverflow =>post_question=>last_activity_date | -                       | 27/06/2021        |
 | last_edit_date     | Last edit date     | Datetime | bigquery:stakoverflow =>post_question=>last_edit_date     | -                       | 27/06/2021        |
 
-### 1.6.2. Dim_User
+### 1.6.2. Dim_Answer
+
+- **Description:** Saves the context of the answer made.
+- **Granularity:** a record represents a reply post.
+- **Uniqueness policy:** the etl will search for responses and assign a surrogate key when this response is not stored in the dimension.
+- **Invalidity policy:** All fields are required.
+- **SCD Policy:** All fields will be Slowly Changing Dimension type one
+
+| Column name        | Display name       | Type     | Source                                                    | Comment                 | Sample            |
+| ------------------ | ------------------ | -------- | --------------------------------------------------------- | ----------------------- | ----------------- |
+| answer_key         | Answer Key         | String   | -                                                         | Surragate key generated | 68d2e3f           |
+| id_nk              | Id natural key     | Integer  | bigquery:stakoverflow =>post_answer=>id                   | Natural Key             | 4                 |
+| body               | Body               | String   | bigquery:stakoverflow =>post_answer=>body                 | -                       | What is it        |
+| last_activity_date | Last activity date | Date     | bigquery:stakoverflow =>post_answer=>last_activity_date   | -                       | 27/06/2021        |
+| last_edit_date     | Last edit date     | Date     | bigquery:stakoverflow =>post_answer=>last_edit_date       | -                       | 27/06/2021        |
+| creation_date      | Creation date      | Date     | bigquery:stakoverflow =>post_answer=>creation_date        | -                       | 27/06/2021        |
+
+
+### 1.6.3. Dim_User
 
 - **Description:** Save the context of a user
 - **Granularity:** a record represents a user.
@@ -1155,7 +1174,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | bronze_badge_count | Bronze badge count | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 2                                      |
 | gold_badge_count   | Gold badge count   | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 1                                      |
 
-### 1.6.3. Dim_tag
+### 1.6.4. Dim_tag
 - **Description:** Store the tags for the questions
 - **Granularity:** A record represents a tag
 - **Uniqueness policy:** The ETL searches the tags and assigns a surrogate key when the tag is new
@@ -1171,7 +1190,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | Description | Description  | String  | -                                   | Extract of StakOverflow page | For questions regarding programming in ECMAScript |
 
 
-### 1.6.4. Dim_tag_bridge
+### 1.6.5. Dim_tag_bridge
 - **Description:** The bridge stores the relation between the fact table and the tag table
 - **Granularity:** A record represents a group of tags for a question
 - **Uniqueness policy:** The ETL searches the tags and assigns a surrogate key when the tag is new
@@ -1183,13 +1202,13 @@ These are just some of the questions that we could answer, it is hoped that the 
 | tag_key       | Tag key       | String | -      | Foreign key   | -                 |
 
 
-### 1.6.5. Dim_Time
+### 1.6.6. Dim_Time
 - **Description:** This dimension stores records about time
 - **Granularity:** A record represents the time in a day
 - **Uniqueness policy:** A record represents the time in a day
 - **Nulliness policy:** All fields are required
 - **SCD policy:**  All fields use SCD 0
-- 
+
 | Column name | Display name | Type     | Source | Comment                 | Sample       |
 | ----------- | ------------ | -------- | ------ | ----------------------- | ------------ |
 | time_key    | Time key     | String   | -      | Surragate key generated | 127          |
@@ -1202,7 +1221,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | Period      | Period       | String   | -      | -                       | midnight     |
 
 
-### 1.6.6. Dim_Date
+### 1.6.7. Dim_Date
 - **Description:** This dimension stores records about day
 - **Granularity:** A record represents a day in a year
 - **Uniqueness policy:** A record represents a day in a year
@@ -1223,7 +1242,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | Day          | Day          | Integer | -      | -                       | 1        |
 
 
-### 1.6.7. Fact_Done_Question
+### 1.6.8. Fact_Done_Question
 
 - **Description:** Contains all the events that occur in the question asked business process.
 - **Granularity:** a record represents a question asked
@@ -1246,7 +1265,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | favorite_count | Favorite count | Integer | bigquery:stakoverflow =>post_question=favorite_count | -                                      | 2      |
 
 
-### 1.6.8. Fact_Done_Answer
+### 1.6.9. Fact_Done_Answer
 
 - **Description:**  Contains all the events that occur in the done response business process
 - **Granularity:** A record represents a answer

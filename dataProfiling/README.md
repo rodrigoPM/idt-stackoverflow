@@ -904,16 +904,18 @@ Below we will describe in more detail each of the tables that make up our StackO
 
 Our dimensional model is based on the StackOverflow data set, the needs that it will solve are the following:
 
-- The total of questions asked during a defined period.
-- The percentage of questions that have been answered over the years.
-- The day of the week that you have had the most questions answered within a defined period.
-- Users with the highest reputation.
-- Users who have contributed the most by solving questions for a defined time.
-- The questions that have had the most visits during a period.
-- Which technologies are the most frequently asked questions during a period.
-- The answers with the highest votes during a period.
-- The increase in questions during quarantine compared to previous years.
-- The answers that have received the most feedback.
+1. ¿What is the total number of questions asked during a defined time?
+2. ¿What is the percentage of questions that have been answered during a defined time?
+3. ¿What is the day of the week and month of the year with the highest number of questions and answers?
+4. ¿Which users have the highest reputation?
+5. ¿Which users have solved the most questions?
+6. ¿Which questions have had the most views?
+7. ¿What technologies are the most frequently asked questions about?
+8. ¿What are the most favorited and highest rated questions that were created over a period of time?
+9. ¿What is the behavior of the questions asked during the pandemic period compared to previous years?
+10. ¿What are the questions that have received the most feedback?
+
+
 
 These are just some of the questions that we could answer, it is hoped that the dimensional model will allow analytical users to be able to answer more types of questions.
 
@@ -937,7 +939,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 | **Source field nomenclature**                                                               |
 | ------------------------------------------------------------------------------------------- |
-| <div style="text-align: center">**[Dataset]  :  [Esquema]   =>  [Tabla]  => [Campo]**</div> |
+| <div style="text-align: center">**[Dataset] => [Tabla] => [Campo]**</div> |
 
 ### 1.6.1. Dim_Question
 
@@ -946,15 +948,15 @@ These are just some of the questions that we could answer, it is hoped that the 
 - **Uniqueness policy:** the etl will search the questions and assign a surrogate key when this question is not stored in the dimension.
 - **Invalidity policy:** All fields are required.
 - **SCD Policy:** All fields will be Slowly Changing Dimension type one.
-
+- 
 | Column name        | Display name       | Type     | Source                                                    | Comment                 | Sample            |
 | ------------------ | ------------------ | -------- | --------------------------------------------------------- | ----------------------- | ----------------- |
 | question_key       | Question Key       | String   | -                                                         | Surragate key generated | 68d2e3f           |
-| id_nk              | Id natural key     | Integer  | bigquery:stakoverflow =>post_question=>id                 | Natural Key             | 4                 |
-| title              | Title              | String   | bigquery:stakoverflow =>post_question=>title              | -                       | Null pointer java |
-| body               | Body               | String   | bigquery:stakoverflow =>post_question=>body               | -                       | What is it        |
-| last_activity_date | Last activity date | Date     | bigquery:stakoverflow =>post_question=>last_activity_date | -                       | 27/06/2021        |
-| last_edit_date     | Last edit date     | Date     | bigquery:stakoverflow =>post_question=>last_edit_date     | -                       | 27/06/2021        |
+| id_question_nk     | Id natural key     | Integer  | stakoverflow =>post_question=>id                          | Natural Key             | 4                 |
+| title              | Title              | String   | stakoverflow =>post_question=>title                       | -                       | Null pointer java |
+| last_activity_date | Last activity date | Timestamp     | stakoverflow =>post_question=>last_activity_date     | -                       | 27/06/2021        |
+| last_edit_date     | Last edit date     | Timestamp     | stakoverflow =>post_question=>last_edit_date         | -                       | 27/06/2021        |
+| creation_date      | Creation date      | Timestamp     | stakoverflow =>post_question=>creation_date          | -                       | 27/06/2021        |
 
 ### 1.6.2. Dim_Answer
 
@@ -967,11 +969,10 @@ These are just some of the questions that we could answer, it is hoped that the 
 | Column name        | Display name       | Type     | Source                                                    | Comment                 | Sample            |
 | ------------------ | ------------------ | -------- | --------------------------------------------------------- | ----------------------- | ----------------- |
 | answer_key         | Answer Key         | String   | -                                                         | Surragate key generated | 68d2e3f           |
-| id_nk              | Id natural key     | Integer  | bigquery:stakoverflow =>post_answer=>id                   | Natural Key             | 4                 |
-| body               | Body               | String   | bigquery:stakoverflow =>post_answer=>body                 | -                       | What is it        |
-| last_activity_date | Last activity date | Date     | bigquery:stakoverflow =>post_answer=>last_activity_date   | -                       | 27/06/2021        |
-| last_edit_date     | Last edit date     | Date     | bigquery:stakoverflow =>post_answer=>last_edit_date       | -                       | 27/06/2021        |
-| creation_date      | Creation date      | Date     | bigquery:stakoverflow =>post_answer=>creation_date        | -                       | 27/06/2021        |
+| id_answer_nk       | Id natural key     | Integer  | stakoverflow =>post_answer=>id                            | Natural Key             | 4                 |
+| last_activity_date | Last activity date | Timestamp| stakoverflow =>post_answer=>last_activity_date            | -                       | 27/06/2021        |
+| last_edit_date     | Last edit date     | Timestamp| stakoverflow =>post_answer=>last_edit_date                | -                       | 27/06/2021        |
+| creation_date      | Creation date      | Timestamp| stakoverflow =>post_answer=>creation_date                 | -                       | 27/06/2021        |
 
 
 ### 1.6.3. Dim_User
@@ -985,21 +986,21 @@ These are just some of the questions that we could answer, it is hoped that the 
 | Column name        | Display name       | Type     | Source                                           | Comment                 | Sample                                 |
 | ------------------ | ------------------ | -------- | ------------------------------------------------ | ----------------------- | -------------------------------------- |
 | user_key           | User key           | String   | -                                                | Surragate key generated | 68d2e3f                                |
-| id_nk              | Id natural key     | Integer  | bigquery:stakoverflow =>users=>id                | Natural Key             | 4                                      |
-| display_name       | Display name       | Integer  | bigquery:stakoverflow =>users=>display_name      | -                       | Henry                                  |
-| creation_date      | Creation date      | Datatime | bigquery:stakoverflow =>users=>creation_date     | -                       | 27/06/2021                             |
-| Reputation         | Reputation         | Integer  | bigquery:stakoverflow =>users=>reputation        | -                       | 10                                     |
-| last_access_date   | Last access date   | Datetime | bigquery:stakoverflow =>users=>last_access_date  | -                       | 27/06/2021                             |
-| down_votes         | Down votes         | Integer  | bigquery:stakoverflow =>users=>down_votes        | -                       | 0                                      |
-| up_votes           | Up votes           | Integer  | bigquery:stakoverflow =>users=>up_votes          | -                       | 1                                      |
-| Views              | Views              | Integer  | bigquery:stakoverflow =>users=>views             | -                       | 1                                      |
-| profile_image_url  | Profile image url  | String   | bigquery:stakoverflow =>users=>profile_image_url | -                       | https://www.gravatar.com/avatar/730d47 |
-| last_gold_badge    | Last gold badge    | String   | bigquery:stakoverflow =>badges                   | Calculater ETL          | student                                |
-| last_silver_badge  | Last silver badge  | String   | bigquery:stakoverflow =>badges                   | Calculater ETL          | supporter                              |
-| last_bronze_badge  | Last bronce badge  | String   | bigquery:stakoverflow =>badges                   | Calculater ETL          | editor                                 |
-| silver_badge_count | Silver badge count | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 2                                      |
-| bronze_badge_count | Bronze badge count | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 2                                      |
-| gold_badge_count   | Gold badge count   | Integer  | bigquery:stakoverflow =>badges                   | Calculater ETL          | 1                                      |
+| id_user_nk              | Id natural key     | Integer  | stakoverflow =>users=>id                         | Natural Key             | 4                                      |
+| display_name       | Display name       | Integer  | stakoverflow =>users=>display_name               | -                       | Henry                                  |
+| creation_date      | Creation date      | Timestamp | stakoverflow =>users=>creation_date              | -                       | 27/06/2021                             |
+| reputation         | Reputation         | Integer  | stakoverflow =>users=>reputation                 | -                       | 10                                     |
+| last_access_date   | Last access date   | Timestamp | stakoverflow =>users=>last_access_date           | -                       | 27/06/2021                             |
+| down_votes         | Down votes         | Integer  | stakoverflow =>users=>down_votes                 | -                       | 0                                      |
+| up_votes           | Up votes           | Integer  | stakoverflow =>users=>up_votes                   | -                       | 1                                      |
+| views              | Views              | Integer  | stakoverflow =>users=>views                      | -                       | 1                                      |
+| profile_image_url  | Profile image url  | String   | stakoverflow =>users=>profile_image_url          | -                       | https://www.gravatar.com/avatar/730d47 |
+| last_gold_badge    | Last gold badge    | String   | stakoverflow =>badges                            | Calculater ETL          | student                                |
+| last_silver_badge  | Last silver badge  | String   | stakoverflow =>badges                            | Calculater ETL          | supporter                              |
+| last_bronze_badge  | Last bronce badge  | String   | stakoverflow =>badges                            | Calculater ETL          | editor                                 |
+| silver_badge_count | Silver badge count | Integer  | stakoverflow =>badges                            | Calculater ETL          | 2                                      |
+| bronze_badge_count | Bronze badge count | Integer  | stakoverflow =>badges                            | Calculater ETL          | 2                                      |
+| gold_badge_count   | Gold badge count   | Integer  | stakoverflow =>badges                            | Calculater ETL          | 1       
 
 ### 1.6.4. Dim_tag
 - **Description:** Store the tags for the questions
@@ -1008,13 +1009,12 @@ These are just some of the questions that we could answer, it is hoped that the 
 - **Nulliness policy:** All fields are required
 - **SCD policy:**  All fields use SCD 1
 
-| Column name | Display name | Type    | Source                              | Comment                      | Sample                                            |
-| ----------- | ------------ | ------- | ----------------------------------- | ---------------------------- | ------------------------------------------------- |
-| tag_key     | tag_key      | String  | -                                   | Surragate key generated      | 68d2e3f                                           |
-| id_nk       | id_nk        | Integer | bigquery:stakoverflow =>tags=>id    | Natural Key                  | 1                                                 |
-| Name        | Name         | String  | bigquery:stakoverflow =>tags=>name  | -                            | JavaScript                                        |
-| Count       | Count        | Integer | bigquery:stakoverflow =>tags=>count | -                            | 100                                               |
-| Description | Description  | String  | -                                   | Extract of StakOverflow page | For questions regarding programming in ECMAScript |
+| Column name | Display name | Type    | Source                    | Comment                 | Sample     |
+| ----------- | ------------ | ------- | ------------------------- | ----------------------- | ---------- |
+| tag_key     | tag_key      | String  | -                         | Surragate key generated | 68d2e3f    |
+| id_tag_nk   | id_nk        | Integer | stakoverflow =>tags.id    | Natural Key             | 1          |
+| name        | Name         | String  | stakoverflow =>tag.name   | -                       | JavaScript |
+| total_ount  | Count        | Integer | stakoverflow =>tags.count | -                       | 100        |
 
 
 ### 1.6.5. Dim_tag_bridge
@@ -1023,10 +1023,10 @@ These are just some of the questions that we could answer, it is hoped that the 
 - **Uniqueness policy:** The ETL searches the tags and assigns a surrogate key when the tag is new
 - **Nulliness policy:** All fields are required
 
-| Column name   | Display name  | Type   | Source | Comment       | Sample            |
-| ------------- | ------------- | ------ | ------ | ------------- | ----------------- |
-| tag_group_key | Tag group key | String | -      | Surragate key | generated	68d2e3f |
-| tag_key       | Tag key       | String | -      | Foreign key   | -                 |
+| Column name   | Display name  | Type   | Source | Comment                 | Sample  |
+| ------------- | ------------- | ------ | ------ | ----------------------- | ------- |
+| tag_group_key | Tag group key | String | -      | Surragate key generated | abc-def |
+| tag_key       | Tag key       | String | -      | Foreign key to dim_tag  | ghi-jkl |
 
 
 ### 1.6.6. Dim_Time
@@ -1040,12 +1040,12 @@ These are just some of the questions that we could answer, it is hoped that the 
 | ----------- | ------------ | -------- | ------ | ----------------------- | ------------ |
 | time_key    | Time key     | String   | -      | Surragate key generated | 127          |
 | time_24h    | Time 24h     | Time     | -      | -                       | 12:01:27 AM  |
-| Hour        | Hour         | Integer  | -      | -                       | 0            |
-| Minute      | Minute       | Integer  | -      | -                       | 1            |
-| Second      | Second       | Integer  | -      | -                       | 27           |
+| hour        | Hour         | Integer  | -      | -                       | 0            |
+| minute      | Minute       | Integer  | -      | -                       | 1            |
+| second      | Second       | Integer  | -      | -                       | 27           |
 | hour_12     | Hour 12      | Integer  | -      | -                       | 12           |
 | time_ampm   | AM-PM        | DateTime | -      | -                       | 12:01:27 a.m |
-| Period      | Period       | String   | -      | -                       | midnight     |
+| period      | Period       | String   | -      | -                       | midnight     |
 
 
 ### 1.6.7. Dim_Date
@@ -1058,15 +1058,21 @@ These are just some of the questions that we could answer, it is hoped that the 
 | Column name  | Display name | Type    | Source | Comment                 | Sample   |
 | ------------ | ------------ | ------- | ------ | ----------------------- | -------- |
 | date_key     | Date key     | String  | -      | Surragate key generated | 20130101 |
-| Date         | Date         | Date    | -      | -                       | 01/01/13 |
+| date         | Date         | Date    | -      | -                       | 01/01/13 |
 | day_of_week  | Day of week  | Integer | -      | -                       | 1        |
-| Quarter      | Quarter      | Integer | -      | -                       | 2        |
-| Year         | Year         | Integer | -      | -                       | 2013     |
+| quarter      | Quarter      | Integer | -      | -                       | 2        |
+| year         | Year         | Integer | -      | -                       | 2013     |
 | day_name     | Day name     | String  | -      | -                       | Thursday |
 | weekday_flag | Weekday flag | String  | -      | -                       | Weekday  |
-| Month        | Month        | Integer | -      | -                       | 1        |
+| month        | Month        | Integer | -      | -                       | 1        |
 | month_name   | Month name   | String  | -      | -                       | January  |
-| Day          | Day          | Integer | -      | -                       | 1        |
+| day          | Day          | Integer | -      | -                       | 1        |
+| date_num_overall          | Date num overall          | Integer | -      | -                       | 2        |
+| date_abbrev          | Date abbrev          | String | -      | -                       | Wed        |
+| week_num_in_year          | Week num in year          | Integer | -      | -                       | 2       |
+| week_num_overall          | Week num overall          | Integer | -      | -                       | 2        |
+| week_beging_date          | Week beging date          | Date    | -      | -                       | 01/01/2021        |
+| month_num_overall         | Month num overall         | Integer | -      | -                       | 2        |
 
 
 ### 1.6.8. Fact_Done_Question
@@ -1079,17 +1085,19 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 | Column name    | Display name   | Type    | Source                                               | Comment                                | Sample |
 | -------------- | -------------- | ------- | ---------------------------------------------------- | -------------------------------------- | ------ |
+| dd_question_key| Dd Question Key| Integer | Dim_question.id_question_nk                          | -                                      | 4      |
 | time_key       | Time key       | String  | Dim_Time.time_key                                    | Foreign key pointing to Dim_Time       | -      |
 | date_key       | Date key       | String  | Dim_Date.date_key                                    | Foreign key pointing to Dim_Date       | -      |
 | user_key       | User key       | String  | Dim_User.user_key                                    | Foreign key pointing to Dim_User       | -      |
 | question_key   | Question key   | String  | Dim_Question.question_key                            | Foreign key pointing to Dim_Question   | -      |
 | tag_group_key  | Tag group key  | String  | Dim_Tag_Bridge.tag_group_key                         | Foreign key pointing to Dim_Tag_Bridge | -      |
-| answer_count   | Answer count   | Integer | bigquery:stakoverflow =>post_question=>answer_count  | -                                      | 2      |
-| view_count     | View count     | Integer | bigquery:stakoverflow =>post_question=>view_count    | -                                      | 10     |
-| Score          | Score          | Integer | bigquery:stakoverflow =>post_question=>score         | -                                      | 5      |
-| comment_count  | Comment count  | Integer | bigquery:stakoverflow =>post_question=comment_count  | -                                      | 4      |
-| revision_count | Revision count | Integer | bigquery:stakoverflow =>post_history                 | Calculater ETL                         | 1      |
-| favorite_count | Favorite count | Integer | bigquery:stakoverflow =>post_question=favorite_count | -                                      | 2      |
+| answer_count   | Answer count   | Integer | stakoverflow =>post_question=>answer_count  | -                                      | 2      |
+| view_count     | View count     | Integer | stakoverflow =>post_question=>view_count    | -                                      | 10     |
+| score          | Score          | Integer | stakoverflow =>post_question=>score         | -                                      | 5      |
+| comment_count  | Comment count  | Integer | stakoverflow =>post_question=comment_count  | -                                      | 4      |
+| revision_count | Revision count | Integer | stakoverflow =>post_history                 | Calculater ETL                         | 1      |
+| favorite_count | Favorite count | Integer | stakoverflow =>post_question=favorite_count | -                                      | 2      |
+| fac_done_question_key| Fact done question key | String | fact_done_question=>dd_question_key     | Foreing Key pointing to fact_done_answer_key| abd-gr7      |
 
 
 ### 1.6.9. Fact_Done_Answer
@@ -1100,14 +1108,17 @@ These are just some of the questions that we could answer, it is hoped that the 
 - **Invalidity policy:** All fields are required.
 - **Policy of absence of context:** When a dimension does not apply to a row of the fact, a foreign key will be defined to indicate the absence of data from it.
 
-| Column name  | Display name | Type    | Source | Comment                 | Sample   |
-| ------------ | ------------ | ------- | ------ | ----------------------- | -------- |
-|  time_key           |Time key | String     | Dim_Time.time_key       | Foreign key pointing to Dim_Time        |-        |
-|  date_key           | Date key| String     | Dim_Date.date_key      | Foreign key pointing to Dim_Date        |-        |
-| user_key            | User key| String     | Dim_User.user_key      | Foreign key pointing to Dim_User        |-        |
-|  score             | Score| Integer     | bquery:stakoverflow =>post_answer=>score      | -       |5       |
-|  comment_count          |Comment count  | Integer     |bquery:stakoverflow =>post_answer=comment_count     |  -      |4        |
-|  revision_count   |  Revision count| Integer    | bquery:stakoverflow =>post_history       | Calculater ETL       |1        |
-|  favorite_count  | Favorite count| Integer    | bquery:stakoverflow =>post_answer=favorite_count     | -      |2       |
-| fact_done_question_key  |   Fact done question key| Integer    | Fact_Done_Question     | Foreing Key pointing to Fact_Done_Question      |-      |
+| Column name            | Display name           | Type    | Source                                    | Comment                                    | Sample |
+| ---------------------- | ---------------------- | ------- | ----------------------------------------- | ------------------------------------------ | ------ |
+| time_key               | Time key               | Integer | Dim_Time.time_key                         | Foreign key pointing to Dim_Time           | -      |
+| date_key               | Date key               | Integer | Dim_Date.date_key                         | Foreign key pointing to Dim_Date           | -      |
+| user_key               | User key               | String  | Dim_User.user_key                         | Foreign key pointing to Dim_User           | -      |
+| score                  | Score                  | Integer | stakoverflow =>post_answer.score          | -                                          | 5      |
+| comment_count          | Comment count          | Integer | stakoverflow =>post_answer.comment_count  | -                                          | 4      |
+| revision_count         | Revision count         | Integer | stakoverflow =>post_history.post_id       | Calculater ETL                             | 1      |
+| favorite_count         | Favorite count         | Integer | stakoverflow =>post_answer.favorite_count | -                                          | 2      |
+| fact_done_question_key | Fact done question key | String  | Fact_Done_Question.fact_done_question_key | Foreing Key pointing to Fact_Done_Question | ab-cef |
+| fact_done_answer_key   | Fact done answer key   | String  | -                                         | Primary key generated to Fact_Done_Answer  | hi-jkl |
+| dd_answer_key          | DD answer key          | Integer | Dim_answer.id_answer_nk                   | -                                          | 7      |
+
 

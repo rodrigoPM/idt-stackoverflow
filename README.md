@@ -5,3 +5,5 @@ The main objective of the project lies in the need to build a dimensional model 
 ## Content
 
 - [1. Profiling](dataProfiling)
+- [2. Development and implementation](implementation)
+- [3. Results](result)

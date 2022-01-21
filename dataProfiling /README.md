@@ -1107,7 +1107,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | comment_count  | Comment count  | Integer | stakoverflow =>post_question=comment_count  | -                                      | 4      |
 | revision_count | Revision count | Integer | stakoverflow =>post_history                 | Calculater ETL                         | 1      |
 | favorite_count | Favorite count | Integer | stakoverflow =>post_question=favorite_count | -                                      | 2      |
-| fac_done_question_key| Fact done question key | String | fact_done_question=>dd_question_key     |  Primary key generated to fact_done_question| abd-gr7      |
+| fac_done_question_key| Fact done question key | String | -     |  Primary key generated to fact_done_question| abd-gr7      |
 
 
 ### 1.6.9. Fact_Done_Answer

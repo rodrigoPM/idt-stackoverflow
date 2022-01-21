@@ -90,6 +90,16 @@ Dimensional modeling will be applied, made up of the business process, determina
 
 ### 1.2.1. Description 
 
+Next, it is detailed in a concrete way how the data that makes up the StackOverflow dataset is organized:
+
+| Characteristic  |Description   | 
+| --- | --------------------------|
+|Data origin:| The data comes from a relational or transactional database model, stored on the BigQuery platform for the StackOverflow Q&A site.|
+|Format:| The data is organized in 16 tables with csv format, with headers in their tables, use of separators such as [,].|
+|Structure:| Each of the tables that the relational model has have their corresponding primary and foreign keys by which they are related. Having with it metadata corresponding to the scheme that each one has, that is, their respective data types for each column that makes it up.|
+|Dataset time period:| The dataset includes data from the year 2008 to May 2021, updating this quarterly.|
+
+
 Below we will describe in more detail each of the tables that make up our StackOverflow dataset:
 
 | N°  | Table name                 | Number of records | Size      | column | Used for MD |
@@ -1038,7 +1048,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 | Column name | Display name | Type     | Source | Comment                 | Sample       |
 | ----------- | ------------ | -------- | ------ | ----------------------- | ------------ |
-| time_key    | Time key     | String   | -      | Surragate key generated | 127          |
+| time_key    | Time key     | Integer  | -      | Surragate key generated | 127          |
 | time_24h    | Time 24h     | Time     | -      | -                       | 12:01:27 AM  |
 | hour        | Hour         | Integer  | -      | -                       | 0            |
 | minute      | Minute       | Integer  | -      | -                       | 1            |
@@ -1057,7 +1067,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 | Column name  | Display name | Type    | Source | Comment                 | Sample   |
 | ------------ | ------------ | ------- | ------ | ----------------------- | -------- |
-| date_key     | Date key     | String  | -      | Surragate key generated | 20130101 |
+| date_key     | Date key     | Integer | -      | Surragate key generated | 20130101 |
 | date         | Date         | Date    | -      | -                       | 01/01/13 |
 | day_of_week  | Day of week  | Integer | -      | -                       | 1        |
 | quarter      | Quarter      | Integer | -      | -                       | 2        |
@@ -1086,8 +1096,8 @@ These are just some of the questions that we could answer, it is hoped that the 
 | Column name    | Display name   | Type    | Source                                               | Comment                                | Sample |
 | -------------- | -------------- | ------- | ---------------------------------------------------- | -------------------------------------- | ------ |
 | dd_question_key| Dd Question Key| Integer | Dim_question.id_question_nk                          | -                                      | 4      |
-| time_key       | Time key       | String  | Dim_Time.time_key                                    | Foreign key pointing to Dim_Time       | -      |
-| date_key       | Date key       | String  | Dim_Date.date_key                                    | Foreign key pointing to Dim_Date       | -      |
+| time_key       | Time key       | Integer | Dim_Time.time_key                                    | Foreign key pointing to Dim_Time       | -      |
+| date_key       | Date key       | Integer | Dim_Date.date_key                                    | Foreign key pointing to Dim_Date       | -      |
 | user_key       | User key       | String  | Dim_User.user_key                                    | Foreign key pointing to Dim_User       | -      |
 | question_key   | Question key   | String  | Dim_Question.question_key                            | Foreign key pointing to Dim_Question   | -      |
 | tag_group_key  | Tag group key  | String  | Dim_Tag_Bridge.tag_group_key                         | Foreign key pointing to Dim_Tag_Bridge | -      |
@@ -1097,7 +1107,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | comment_count  | Comment count  | Integer | stakoverflow =>post_question=comment_count  | -                                      | 4      |
 | revision_count | Revision count | Integer | stakoverflow =>post_history                 | Calculater ETL                         | 1      |
 | favorite_count | Favorite count | Integer | stakoverflow =>post_question=favorite_count | -                                      | 2      |
-| fac_done_question_key| Fact done question key | String | fact_done_question=>dd_question_key     | Foreing Key pointing to fact_done_answer_key| abd-gr7      |
+| fac_done_question_key| Fact done question key | String | fact_done_question=>dd_question_key     |  Primary key generated to fact_done_question| abd-gr7      |
 
 
 ### 1.6.9. Fact_Done_Answer

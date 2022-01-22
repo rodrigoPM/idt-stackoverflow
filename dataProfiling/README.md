@@ -922,7 +922,7 @@ Our dimensional model is based on the StackOverflow data set, the needs that it 
 6. ¿Which questions have had the most views?
 7. ¿What technologies are the most frequently asked questions about?
 8. ¿What are the most favorited and highest rated questions that were created over a period of time?
-9. ¿What is the behavior of the questions asked during the pandemic period compared to previous years?
+9. ¿How was the behavior of the questions and answers made during the pandemic period compared to previous years?
 10. ¿What are the questions that have received the most feedback?
 
 

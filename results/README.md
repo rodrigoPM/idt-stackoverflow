@@ -22,15 +22,44 @@
 
 ## 1.1. Development of dashboards for the resolution of analytical needs
  ### 1.1.1. ¿What is the total number of questions asked during a defined time?
+ 
+ ![Question 1](dashboardImages/Question_1.png)
+ 
  ### 1.1.2. ¿What is the percentage of questions that have been answered during a defined time?
+ 
+ ![Question 2](dashboardImages/Question_2.png)
+ 
  ### 1.1.3. ¿What is the day of the week and the month of the year with the highest number of questions and answers?
+ 
+  ![Question 3](dashboardImages/Question_3.png)
+  
  ### 1.1.4. ¿Which users have the highest reputation?
+ 
+  ![Question 4](dashboardImages/Question_4.png)
+  
  ### 1.1.5. ¿Which users have solved the greatest number of questions?
+ 
+  ![Question 5](dashboardImages/Question_5.png)
+  
  ### 1.1.6. ¿Which questions have had the most visits?
+ 
+  ![Question 6](dashboardImages/Question_6.png)
+  
  ### 1.1.7. ¿What technologies are the most frequently asked questions about?
+ 
+  ![Question 7](dashboardImages/Question_7.png)
+  
  ### 1.1.8. ¿what are the most favorited and highest rated questions that were created over a period of time?
+ 
+  ![Question 8](dashboardImages/Question_8.png)
+  
  ### 1.1.9. ¿How was the behavior of the questions and answers made during the pandemic period compared to previous years?
+ 
+  ![Question 9](dashboardImages/Question_9.png)
+  
  ### 1.1.10. ¿What are the questions that have received the most feedback?
+ 
+  ![Question 10](dashboardImages/Question_10.png)
 
 ## 1.2. section 2
 ### 1.2.1. subsection 1

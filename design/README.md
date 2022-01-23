@@ -53,22 +53,22 @@ As ilustrated in below image, there are four separe and distinct components to c
 
 ### 1.2.2. Components description
 
-**Data Source**
+**Data Source:**
 These are the operational systems of record that capture the business's transactions. The data lake can have more than one source system and they are outside of the data lake. This data lake is using only one source system and the data is in csv format. 
 
-**Raw data zone**
+**Raw data zone:**
 This is the firts data layer, the data is stored with its original format, it does not have transformation applied yet. 
 
-**Process zone**
+**Process zone:**
 This is the second data layer, the data has some transformations applied according to the requirements, the transformations is applied through some ETL process. 
 
-**Access zone**
+**Access zone:**
 This is the last data layer, here the data is stored and made available for direct querying by users, report writers and BI applications.
 
-**Govern zone**
+**Govern zone:**
 This zone lets administrators authorize who can take action on specific resources, for this proyect this zone gives full control, and visibility to manage Google Cloud resources centrally.
 
-**Data consumption**
+**Data consumption:**
 Final area where BI applications are connected to the data lake, here, dashboards are generated to present key information to take decisions.
 
 ## 1.3. Proposed dimensional model

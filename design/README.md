@@ -6,19 +6,22 @@
 
 - [1. **StackOverflow Design**](#1-stackoverflow-design)
   - [1.1. Specification of analytical needs that the proposed model will solve](#11-specification-of-analytical-needs-that-the-proposed-model-will-solve)
-  - [1.2. Proposed dimensional model](#12-proposed-dimensional-model)
-    - [1.2.1. Star schema 1](#121-star-schema-1)
-    - [1.2.2. Star schema 2](#122-star-schema-2)
-  - [1.3. Mapping by table](#13-mapping-by-table)
-    - [1.3.1. Dim_Question](#131-dim_question)
-    - [1.3.2. Dim_Answer](#132-dim_answer)
-    - [1.3.3. Dim_User](#133-dim_user)
-    - [1.3.4. Dim_tag](#134-dim_tag)
-    - [1.3.5. Dim_tag_bridge](#135-dim_tag_bridge)
-    - [1.3.6. Dim_Time](#136-dim_time)
-    - [1.3.7. Dim_Date](#137-dim_date)
-    - [1.3.8. Fact_Done_Question](#138-fact_done_question)
-    - [1.3.9. Fact_Done_Answer](#139-fact_done_answer)
+  - [1.2. Architecture](#12-architecture)
+    - [1.2.1 Architecture design](#121-architecture-design)
+    - [1.2.2. Components description](#122-components-description)
+  - [1.3. Proposed dimensional model](#13-proposed-dimensional-model)
+    - [1.3.1. Star schema 1](#131-star-schema-1)
+    - [1.3.2. Star schema 2](#132-star-schema-2)
+  - [1.4. Mapping by table](#14-mapping-by-table)
+    - [1.4.1. Dim_Question](#141-dim_question)
+    - [1.4.2. Dim_Answer](#142-dim_answer)
+    - [1.4.3. Dim_User](#143-dim_user)
+    - [1.4.4. Dim_tag](#144-dim_tag)
+    - [1.4.5. Dim_tag_bridge](#145-dim_tag_bridge)
+    - [1.4.6. Dim_Time](#146-dim_time)
+    - [1.4.7. Dim_Date](#147-dim_date)
+    - [1.4.8. Fact_Done_Question](#148-fact_done_question)
+    - [1.4.9. Fact_Done_Answer](#149-fact_done_answer)
 
 
 ## 1.1. Specification of analytical needs that the proposed model will solve
@@ -40,29 +43,56 @@ Our dimensional model is based on the StackOverflow data set, the needs that it 
 
 These are just some of the questions that we could answer, it is hoped that the dimensional model will allow analytical users to be able to answer more types of questions.
 
+## 1.2. Architecture
 
-## 1.2. Proposed dimensional model
+### 1.2.1 Architecture design
 
-### 1.2.1. Star schema 1
+As ilustrated in below image, there are four separe and distinct components to consider in the our data lake architecture: data source, ETL system, data presentation area and business intelligence applications.
+
+![Architecture](architecture/architecture.png)
+
+### 1.2.2. Components description
+
+**Data Source**
+These are the operational systems of record that capture the business's transactions. The data lake can have more than one source system and they are outside of the data lake. This data lake is using only one source system and the data is in csv format. 
+
+**Raw data zone**
+This is the firts data layer, the data is stored with its original format, it does not have transformation applied yet. 
+
+**Process zone**
+This is the second data layer, the data has some transformations applied according to the requirements, the transformations is applied through some ETL process. 
+
+**Access zone**
+This is the last data layer, here the data is stored and made available for direct querying by users, report writers and BI applications.
+
+**Govern zone**
+This zone lets administrators authorize who can take action on specific resources, for this proyect this zone gives full control, and visibility to manage Google Cloud resources centrally.
+
+**Data consumption**
+Final area where BI applications are connected to the data lake, here, dashboards are generated to present key information to take decisions.
+
+## 1.3. Proposed dimensional model
+
+### 1.3.1. Star schema 1
 
 - **Bussiness process:** Done Question
 - **Granularity:** A record corresponds a done question
 
 ![Done Question model](dimensionalModels/doneQuestionModel.png)
 
-###  1.2.2. Star schema 2
+###  1.3.2. Star schema 2
 - **Bussiness process:** Done Answer
 - **Granularity:** A record corresponds a done answer
 
 ![Done Answer model](dimensionalModels/doneAnswerModel.png)
 
-##  1.3. Mapping by table
+##  1.4. Mapping by table
 
 | **Source field nomenclature**                                                               |
 | ------------------------------------------------------------------------------------------- |
 | <div style="text-align: center">**[Dataset] => [Tabla] => [Campo]**</div> |
 
-###  1.3.1. Dim_Question
+###  1.4.1. Dim_Question
 
 - **Description:** Save the context of the question asked
 - **Granularity:** a record represents a question post
@@ -79,7 +109,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | last_edit_date     | Last edit date     | Timestamp     | stakoverflow =>post_question=>last_edit_date         | -                       | 27/06/2021        |
 | creation_date      | Creation date      | Timestamp     | stakoverflow =>post_question=>creation_date          | -                       | 27/06/2021        |
 
-###  1.3.2. Dim_Answer
+###  1.4.2. Dim_Answer
 
 - **Description:** Saves the context of the answer made.
 - **Granularity:** a record represents a reply post.
@@ -96,7 +126,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | creation_date      | Creation date      | Timestamp| stakoverflow =>post_answer=>creation_date                 | -                       | 27/06/2021        |
 
 
-###  1.3.3. Dim_User
+###  1.4.3. Dim_User
 
 - **Description:** Save the context of a user
 - **Granularity:** a record represents a user.
@@ -123,7 +153,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | bronze_badge_count | Bronze badge count | Integer  | stakoverflow =>badges                            | Calculater ETL          | 2                                      |
 | gold_badge_count   | Gold badge count   | Integer  | stakoverflow =>badges                            | Calculater ETL          | 1       
 
-### 1.3.4. Dim_tag
+### 1.4.4. Dim_tag
 - **Description:** Store the tags for the questions
 - **Granularity:** A record represents a tag
 - **Uniqueness policy:** The ETL searches the tags and assigns a surrogate key when the tag is new
@@ -138,7 +168,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | total_ount  | Count        | Integer | stakoverflow =>tags.count | -                       | 100        |
 
 
-### 1.3.5. Dim_tag_bridge
+### 1.4.5. Dim_tag_bridge
 - **Description:** The bridge stores the relation between the fact table and the tag table
 - **Granularity:** A record represents a group of tags for a question
 - **Uniqueness policy:** The ETL searches the tags and assigns a surrogate key when the tag is new
@@ -150,7 +180,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | tag_key       | Tag key       | String | -      | Foreign key to dim_tag  | ghi-jkl |
 
 
-### 1.3.6. Dim_Time
+### 1.4.6. Dim_Time
 - **Description:** This dimension stores records about time
 - **Granularity:** A record represents the time in a day
 - **Uniqueness policy:** A record represents the time in a day
@@ -169,7 +199,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | period      | Period       | String   | -      | -                       | midnight     |
 
 
-### 1.3.7. Dim_Date
+### 1.4.7. Dim_Date
 - **Description:** This dimension stores records about day
 - **Granularity:** A record represents a day in a year
 - **Uniqueness policy:** A record represents a day in a year
@@ -196,7 +226,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | month_num_overall         | Month num overall         | Integer | -      | -                       | 2        |
 
 
-### 1.3.8. Fact_Done_Question
+### 1.4.8. Fact_Done_Question
 
 - **Description:** Contains all the events that occur in the question asked business process.
 - **Granularity:** a record represents a question asked
@@ -221,7 +251,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 | fac_done_question_key| Fact done question key | String | -     |  Primary key generated to fact_done_question| abd-gr7      |
 
 
-###  1.3.9. Fact_Done_Answer
+###  1.4.9. Fact_Done_Answer
 
 - **Description:**  Contains all the events that occur in the done response business process
 - **Granularity:** A record represents a answer

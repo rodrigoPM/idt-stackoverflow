@@ -152,11 +152,13 @@ Additionally, visual elements are presented, such as the segmentator of periods 
 </p>
 
 ## 1.2. Conclusions
-1. The development of the dimensional models for the business processes of questions and answers made, will allow the community of users of the StackOverflow platform to be able to know first-hand the current state of the platform in terms of behavior patterns in the generation of questions and answers in specific periods of time, user behavior patterns when interacting within the platform, patterns related to the level of feedback that the questions receive, technologies most consulted during certain periods of time, among other analysis variables that result from established business processes.
+1. With the development of the dimensional models for the business processes of questions and answers made, it will allow the community of users of the Stack Overflow platform to be able to know first-hand the current state of the platform, in terms of behavior patterns. in the generation of questions and answers in specific periods of time, user behavior patterns when interacting within the platform, patterns related to the level of feedback that the questions receive, technologies most consulted during certain periods of time, among others analysis variables resulting from established business processes
 
-2. The development of a Big data solution will allow the Stackoveflow community to have a Data Lakehouse, which will directly solve the main analytical requirements that led to the development of the project. It is important to mention that the final data can also be applied in data science solutions, Machine Learning application, business intelligence, that is, the final model is equipped with the capacity to feed superior data analysis processes, thus increasing the potential of the solution as such.
+2. The development of a Big data solution will allow the Stack Overflow community to have a Data Lakehouse, which will directly solve the main analytical requirements that led to the development of the project. It is important to mention that the final data can also be applied in data science solutions, Machine Learning application, Business Intelligence, that is, the final model is equipped with the capacity to feed superior data analysis processes, thus increasing the potential of the solution.
 
-3. The creation of the Dashboards that provide a concrete solution to the business requirements allows us to really understand the enormous analytical contribution that the processed data can give to organizations, the innumerable concerns, questions or needs that may arise over time. A report allows to transmit the findings found in the data, findings that can increase the success of strategic decision making.
+3. The creation of reports that provide a concrete solution to business requirements, allows us to really understand the enormous analytical contribution that the processed data can give organizations, the innumerable concerns, questions or needs that may arise over time. Since a report allows direct transmission of the findings found in the data, findings that can increase the success of strategic decision-making.
+
+
 
 
 

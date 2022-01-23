@@ -53,7 +53,7 @@ As ilustrated in below image, there are four separe and distinct components to c
 
 ### 1.2.2. Components description
 
-**Data Source:**
+**Data source:**
 These are the operational systems of record that capture the business's transactions. The data lake can have more than one source system and they are outside of the data lake. This data lake is using only one source system and the data is in csv format. 
 
 **Raw data zone:**

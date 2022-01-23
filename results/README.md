@@ -17,8 +17,8 @@
     - [1.1.10 ¿What are the questions that have received the most feedback?](#1110-what-are-the-questions-that-have-received-the-most-feedback)
 
 
-  - [1.2. section 2](#12-section-2)
-    - [1.2.1. subsection 1](#121-subsection-1)
+  - [1.2. Conclusions](#12-conclusions)
+     
 
 ## 1.1. Development of dashboards for the resolution of analytical needs
  ### 1.1.1. ¿What is the total number of questions asked during a defined time?
@@ -116,6 +116,7 @@ The dashboard presents us with the top 10 technologies that were asked the most 
 <p style="text-align:justify">
   
 The dashboard clearly shows us which are the questions that have been marked as favorites and with the highest score, analyzed from a period of time, in this case for the year 2020, a period of time marked by the appearance of the pandemic. . Basically, the report performs the analysis through the presentation of two horizontal bar graphs, the first of which represents all those questions most marked as favorites and the second shows the questions with the highest score.
+  
 In addition, additional elements are presented that allow increasing the analytical capacity of the report, such as the segmentation of the period in which the scores or markings are made on the questions, direct presentation of the question with the highest score or favorite marking. If we select the questions presented on the bar graphs, a series of counters are also presented that allow us to know the number of reviews, scores, answers and comments received for the selected question.
 
 </p>
@@ -129,6 +130,7 @@ In addition, additional elements are presented that allow increasing the analyti
 <p style="text-align:justify">
   
 The dashboard shows us in a concrete way the behavior that occurred with respect to the creation of questions and answers during the quarantine period which is for the year 2020, this behavior has been compared with respect to previous years, as shows the figure. The period from 2018 -2020 was taken as a reference, this period clearly determines in the line graphs how the generation of questions and answers had its highest point in the first months in which the nations implemented their respective quarantines, as well as the interesting decline in questions and answers in the months after that time period.
+  
 Through the interaction with the graphs we will be able to observe relevant data such as the number of questions or answers made for each year under analysis, as well as the number of the month and its corresponding name. In such a way that it will allow us to interact by selecting on the graphs in those months that are of analytical interest both to answer the analytical question as well as for subsequent questions that may arise.
 
 </p>
@@ -142,11 +144,22 @@ Through the interaction with the graphs we will be able to observe relevant data
 <p style="text-align:justify">
   
 The dashboard clearly shows us which are the questions that have received the most feedback during a period. The report analyzes the question based on two perspectives, the first perspective is shown through the first horizontal bar graph which shows the questions with the highest number of responses received. The second graph shows us the questions with the greatest number of comments, this is because the greatest feedback that the questions can have is through the comments and answers received.
+  
 Additionally, visual elements are presented, such as the segmentator of periods in which the comments and answers to the questions are made, in addition, if we select one of the questions in the bar graphs through the visual card, it will show us the name of the question with More responses and comments. Finally, the report is equipped with a series of counters that allow us to directly view the number of reviews, scores, responses and comments received, they will give us specific data if we select specific questions the respective graph as such.
 
 
 
 </p>
 
-## 1.2. section 2
-### 1.2.1. subsection 1
+## 1.2. Conclusions
+1. The development of the dimensional models for the business processes of questions and answers made, will allow the community of users of the StackOverflow platform to be able to know first-hand the current state of the platform in terms of behavior patterns in the generation of questions and answers in specific periods of time, user behavior patterns when interacting within the platform, patterns related to the level of feedback that the questions receive, technologies most consulted during certain periods of time, among other analysis variables that result from established business processes.
+
+2. The development of a Big data solution will allow the Stackoveflow community to have a Data Lakehouse, which will directly solve the main analytical requirements that led to the development of the project. It is important to mention that the final data can also be applied in data science solutions, Machine Learning application, business intelligence, that is, the final model is equipped with the capacity to feed superior data analysis processes, thus increasing the potential of the solution as such.
+
+3. The creation of the Dashboards that provide a concrete solution to the business requirements allows us to really understand the enormous analytical contribution that the processed data can give to organizations, the innumerable concerns, questions or needs that may arise over time. A report allows to transmit the findings found in the data, findings that can increase the success of strategic decision making.
+
+
+
+
+
+

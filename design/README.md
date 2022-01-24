@@ -7,7 +7,7 @@
 - [1. **StackOverflow Design**](#1-stackoverflow-design)
   - [1.1. Specification of analytical needs that the proposed model will solve](#11-specification-of-analytical-needs-that-the-proposed-model-will-solve)
   - [1.2. Architecture](#12-architecture)
-    - [1.2.1 Architecture design](#121-architecture-design)
+    - [1.2.1. Architecture design](#121-architecture-design)
     - [1.2.2. Components description](#122-components-description)
   - [1.3. Proposed dimensional model](#13-proposed-dimensional-model)
     - [1.3.1. Star schema 1](#131-star-schema-1)
@@ -45,7 +45,7 @@ These are just some of the questions that we could answer, it is hoped that the 
 
 ## 1.2. Architecture
 
-### 1.2.1 Architecture design
+### 1.2.1. Architecture design
 
 As ilustrated in below image, there are four separe and distinct components to consider in the our data lake architecture: data source, ETL system, data presentation area and business intelligence applications.
 

@@ -12,11 +12,9 @@
     - [1.1.5. ¿Which users have solved the greatest number of questions?](#115-which-users-have-solved-the-greatest-number-of-questions)
     - [1.1.6. ¿Which questions have had the most visits?](#116-which-questions-have-had-the-most-visits)
     - [1.1.7. ¿What technologies are the most frequently asked questions about?](#117-what-technologies-are-the-most-frequently-asked-questions-about)
-    - [1.1.8. ¿What are the most favorited and highest rated questions that were created over a period of time?](#118-what-are-the-most-favorited-and-highest-rated-questions-that-were-created-over-a-period-of-time)
-    - [1.1.9  ¿How was the behavior of the questions and answers made during the pandemic period compared to previous years?](#119-how-was-the-behavior-of-the-questions-and-answers-made-during-the-pandemic-period-compared-to-previous-years)
-    - [1.1.10 ¿What are the questions that have received the most feedback?](#1110-what-are-the-questions-that-have-received-the-most-feedback)
-
-
+    - [1.1.8. ¿what are the most favorited and highest rated questions that were created over a period of time?](#118-what-are-the-most-favorited-and-highest-rated-questions-that-were-created-over-a-period-of-time)
+    - [1.1.9. ¿How was the behavior of the questions and answers made during the pandemic period compared to previous years?](#119-how-was-the-behavior-of-the-questions-and-answers-made-during-the-pandemic-period-compared-to-previous-years)
+    - [1.1.10. ¿What are the questions that have received the most feedback?](#1110-what-are-the-questions-that-have-received-the-most-feedback)
   - [1.2. Conclusions](#12-conclusions)
      
 

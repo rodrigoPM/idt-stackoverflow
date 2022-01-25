@@ -9,6 +9,7 @@
   - [1.2. Architecture](#12-architecture)
     - [1.2.1. Architecture design](#121-architecture-design)
     - [1.2.2. Components description](#122-components-description)
+    - [1.2.3. Description of the products selected for the architecture](#123-description-of-the-products-selected-for-the-architecture)
   - [1.3. Proposed dimensional model](#13-proposed-dimensional-model)
     - [1.3.1. Star schema 1](#131-star-schema-1)
     - [1.3.2. Star schema 2](#132-star-schema-2)
@@ -28,16 +29,16 @@
 
 Our dimensional model is based on the StackOverflow data set, the needs that it will solve are the following:
 
-1. ¿What is the total number of questions asked during a defined time?
-2. ¿What is the percentage of questions that have been answered during a defined time?
-3. ¿What is the day of the week and month of the year with the highest number of questions and answers?
-4. ¿Which users have the highest reputation?
-5. ¿Which users have solved the most questions?
-6. ¿Which questions have had the most views?
-7. ¿What technologies are the most frequently asked questions about?
-8. ¿What are the most favorited and highest rated questions that were created over a period of time?
-9. ¿How was the behavior of the questions and answers made during the pandemic period compared to previous years?
-10. ¿What are the questions that have received the most feedback?
+1. What is the total number of questions asked during a defined time?
+2. What is the percentage of questions that have been answered during a defined time?
+3. What is the day of the week and month of the year with the highest number of questions and answers?
+4. Which users have the highest reputation?
+5. Which users have solved the most questions?
+6. Which questions have had the most views?
+7. What technologies are the most frequently asked questions about?
+8. What are the most favorited and highest rated questions that were created over a period of time?
+9. How was the behavior of the questions and answers made during the pandemic period compared to previous years?
+10. What are the questions that have received the most feedback?
 
 
 
@@ -70,6 +71,30 @@ This zone lets administrators authorize who can take action on specific resource
 
 **Data consumption:**
 Final area where BI applications are connected to the data lake, here, dashboards are generated to present key information to take decisions.
+
+### 1.2.3 Description of the products selected for the architecture
+
+a.	Cloud Storage.
+
+Google Cloud Storage is a restful online file storage service for storing and accessing data on the Google Cloud Platform infrastructure. The service combines the performance and scalability of the Google cloud with advanced security and sharing capabilities.
+
+b.	Apache Spark.
+It is a platform that has been specifically designed for the processing of large amounts of data, that is, data from different data sources, with a wide variety, volume and speed.
+
+c.	Scala.
+Databricks is an industry-leading cloud-based data engineering tool used to process and transform massive amounts of data and explore data through machine learning models.
+
+e.	Cloud IAM.
+The Google Cloud Identity and Access Management (IAM) service allows you to create and manage permissions for Google Cloud resources. Cloud IAM unifies access control for Google Cloud services in a single system and features a consistent set of operations.
+
+f.	BigQuery.
+BigQuery is a low-cost, fully managed Google data warehouse that allows you to extract analytics from petabytes of data. It is autonomous, so there is no need to manage any infrastructure or have a database administrator.
+
+g.	Power BI.
+It is a potential tool within the market that allows the implementation of visualizations to be able to build the corresponding dashboards, it is super versatile since it integrates with different types of data sources in different technologies.
+
+
+
 
 ## 1.3. Proposed dimensional model
 
@@ -163,9 +188,9 @@ Final area where BI applications are connected to the data lake, here, dashboard
 | Column name | Display name | Type    | Source                    | Comment                 | Sample     |
 | ----------- | ------------ | ------- | ------------------------- | ----------------------- | ---------- |
 | tag_key     | tag_key      | String  | -                         | Surragate key generated | 68d2e3f    |
-| id_tag_nk   | id_nk        | Integer | stakoverflow =>tags.id    | Natural Key             | 1          |
-| name        | Name         | String  | stakoverflow =>tag.name   | -                       | JavaScript |
-| total_ount  | Count        | Integer | stakoverflow =>tags.count | -                       | 100        |
+| id_tag_nk   | id_nk        | Integer | stakoverflow =>tags=>id    | Natural Key             | 1          |
+| name        | Name         | String  | stakoverflow =>tag=>name   | -                       | JavaScript |
+| total_ount  | Count        | Integer | stakoverflow =>tags=>count | -                       | 100        |
 
 
 ### 1.4.5. Dim_tag_bridge
@@ -236,18 +261,18 @@ Final area where BI applications are connected to the data lake, here, dashboard
 
 | Column name    | Display name   | Type    | Source                                               | Comment                                | Sample |
 | -------------- | -------------- | ------- | ---------------------------------------------------- | -------------------------------------- | ------ |
-| dd_question_key| Dd Question Key| Integer | Dim_question.id_question_nk                          | -                                      | 4      |
-| time_key       | Time key       | Integer | Dim_Time.time_key                                    | Foreign key pointing to Dim_Time       | -      |
-| date_key       | Date key       | Integer | Dim_Date.date_key                                    | Foreign key pointing to Dim_Date       | -      |
-| user_key       | User key       | String  | Dim_User.user_key                                    | Foreign key pointing to Dim_User       | -      |
-| question_key   | Question key   | String  | Dim_Question.question_key                            | Foreign key pointing to Dim_Question   | -      |
-| tag_group_key  | Tag group key  | String  | Dim_Tag_Bridge.tag_group_key                         | Foreign key pointing to Dim_Tag_Bridge | -      |
+| dd_question_key| Dd Question Key| Integer | Dim_question=>id_question_nk                          | -                                      | 4      |
+| time_key       | Time key       | Integer | Dim_Time=>time_key                                    | Foreign key pointing to Dim_Time       | -      |
+| date_key       | Date key       | Integer | Dim_Date=>date_key                                    | Foreign key pointing to Dim_Date       | -      |
+| user_key       | User key       | String  | Dim_User=>user_key                                    | Foreign key pointing to Dim_User       | -      |
+| question_key   | Question key   | String  | Dim_Question=>question_key                            | Foreign key pointing to Dim_Question   | -      |
+| tag_group_key  | Tag group key  | String  | Dim_Tag_Bridge=>tag_group_key                         | Foreign key pointing to Dim_Tag_Bridge | -      |
 | answer_count   | Answer count   | Integer | stakoverflow =>post_question=>answer_count  | -                                      | 2      |
 | view_count     | View count     | Integer | stakoverflow =>post_question=>view_count    | -                                      | 10     |
 | score          | Score          | Integer | stakoverflow =>post_question=>score         | -                                      | 5      |
-| comment_count  | Comment count  | Integer | stakoverflow =>post_question=comment_count  | -                                      | 4      |
+| comment_count  | Comment count  | Integer | stakoverflow =>post_question=>comment_count  | -                                      | 4      |
 | revision_count | Revision count | Integer | stakoverflow =>post_history                 | Calculater ETL                         | 1      |
-| favorite_count | Favorite count | Integer | stakoverflow =>post_question=favorite_count | -                                      | 2      |
+| favorite_count | Favorite count | Integer | stakoverflow =>post_question=>favorite_count | -                                      | 2      |
 | fac_done_question_key| Fact done question key | String | -     |  Primary key generated to fact_done_question| abd-gr7      |
 
 
@@ -261,12 +286,12 @@ Final area where BI applications are connected to the data lake, here, dashboard
 
 | Column name            | Display name           | Type    | Source                                    | Comment                                    | Sample |
 | ---------------------- | ---------------------- | ------- | ----------------------------------------- | ------------------------------------------ | ------ |
-| time_key               | Time key               | Integer | Dim_Time.time_key                         | Foreign key pointing to Dim_Time           | -      |
-| date_key               | Date key               | Integer | Dim_Date.date_key                         | Foreign key pointing to Dim_Date           | -      |
-| user_key               | User key               | String  | Dim_User.user_key                         | Foreign key pointing to Dim_User           | -      |
-| score                  | Score                  | Integer | stakoverflow =>post_answer.score          | -                                          | 5      |
-| comment_count          | Comment count          | Integer | stakoverflow =>post_answer.comment_count  | -                                          | 4      |
-| revision_count         | Revision count         | Integer | stakoverflow =>post_history.post_id       | Calculater ETL                             | 1      |
-| fact_done_question_key | Fact done question key | String  | Fact_Done_Question.fact_done_question_key | Foreing Key pointing to Fact_Done_Question | ab-cef |
+| time_key               | Time key               | Integer | Dim_Time=>time_key                         | Foreign key pointing to Dim_Time           | -      |
+| date_key               | Date key               | Integer | Dim_Date=>date_key                         | Foreign key pointing to Dim_Date           | -      |
+| user_key               | User key               | String  | Dim_User=>user_key                         | Foreign key pointing to Dim_User           | -      |
+| score                  | Score                  | Integer | stakoverflow =>post_answer=>score          | -                                          | 5      |
+| comment_count          | Comment count          | Integer | stakoverflow =>post_answer=>comment_count  | -                                          | 4      |
+| revision_count         | Revision count         | Integer | stakoverflow =>post_history=>post_id       | Calculater ETL                             | 1      |
+| fact_done_question_key | Fact done question key | String  | Fact_Done_Question=>fact_done_question_key | Foreing Key pointing to Fact_Done_Question | ab-cef |
 | fact_done_answer_key   | Fact done answer key   | String  | -                                         | Primary key generated to Fact_Done_Answer  | hi-jkl |
-| dd_answer_key          | DD answer key          | Integer | Dim_answer.id_answer_nk                   | -                                          | 7      |
+| dd_answer_key          | DD answer key          | Integer | Dim_answer=>id_answer_nk                   | -                                          | 7      |

@@ -5,21 +5,21 @@
 ------------
 - [1. **StackOverflow Results**](#1-stackoverflow-results)
   - [1.1. Development of dashboards for the resolution of analytical needs](#11-development-of-dashboards-for-the-resolution-of-analytical-needs)
-    - [1.1.1. ¿What is the total number of questions asked during a defined time?](#111-what-is-the-total-number-of-questions-asked-during-a-defined-time)
-    - [1.1.2. ¿What is the percentage of questions that have been answered during a defined time?](#112-what-is-the-percentage-of-questions-that-have-been-answered-during-a-defined-time)
-    - [1.1.3. ¿What is the day of the week and the month of the year with the highest number of questions and answers?](#113-what-is-the-day-of-the-week-and-the-month-of-the-year-with-the-highest-number-of-questions-and-answers)
-    - [1.1.4. ¿Which users have the highest reputation?](#114-which-users-have-the-highest-reputation)
-    - [1.1.5. ¿Which users have solved the greatest number of questions?](#115-which-users-have-solved-the-greatest-number-of-questions)
-    - [1.1.6. ¿Which questions have had the most visits?](#116-which-questions-have-had-the-most-visits)
-    - [1.1.7. ¿What technologies are the most frequently asked questions about?](#117-what-technologies-are-the-most-frequently-asked-questions-about)
-    - [1.1.8. ¿what are the most favorited and highest rated questions that were created over a period of time?](#118-what-are-the-most-favorited-and-highest-rated-questions-that-were-created-over-a-period-of-time)
-    - [1.1.9. ¿How was the behavior of the questions and answers made during the pandemic period compared to previous years?](#119-how-was-the-behavior-of-the-questions-and-answers-made-during-the-pandemic-period-compared-to-previous-years)
-    - [1.1.10. ¿What are the questions that have received the most feedback?](#1110-what-are-the-questions-that-have-received-the-most-feedback)
+    - [1.1.1. What is the total number of questions asked during a defined time?](#111-what-is-the-total-number-of-questions-asked-during-a-defined-time)
+    - [1.1.2. What is the percentage of questions that have been answered during a defined time?](#112-what-is-the-percentage-of-questions-that-have-been-answered-during-a-defined-time)
+    - [1.1.3. What is the day of the week and the month of the year with the highest number of questions and answers?](#113-what-is-the-day-of-the-week-and-the-month-of-the-year-with-the-highest-number-of-questions-and-answers)
+    - [1.1.4. Which users have the highest reputation?](#114-which-users-have-the-highest-reputation)
+    - [1.1.5. Which users have solved the greatest number of questions?](#115-which-users-have-solved-the-greatest-number-of-questions)
+    - [1.1.6. Which questions have had the most visits?](#116-which-questions-have-had-the-most-visits)
+    - [1.1.7. What technologies are the most frequently asked questions about?](#117-what-technologies-are-the-most-frequently-asked-questions-about)
+    - [1.1.8. What are the most favorited and highest rated questions that were created over a period of time?](#118-what-are-the-most-favorited-and-highest-rated-questions-that-were-created-over-a-period-of-time)
+    - [1.1.9. How was the behavior of the questions and answers made during the pandemic period compared to previous years?](#119-how-was-the-behavior-of-the-questions-and-answers-made-during-the-pandemic-period-compared-to-previous-years)
+    - [1.1.10. What are the questions that have received the most feedback?](#1110-what-are-the-questions-that-have-received-the-most-feedback)
   - [1.2. Conclusions](#12-conclusions)
      
 
 ## 1.1. Development of dashboards for the resolution of analytical needs
- ### 1.1.1. ¿What is the total number of questions asked during a defined time?
+ ### 1.1.1. What is the total number of questions asked during a defined time?
  
  ![Question 1](dashboardImages/Question_1.png)
  
@@ -32,7 +32,7 @@ The graph has a time hierarchy enabled, so it allows us to see the total number 
 </p>
  
  
- ### 1.1.2. ¿What is the percentage of questions that have been answered during a defined time?
+ ### 1.1.2. What is the percentage of questions that have been answered during a defined time?
  
  ![Question 2](dashboardImages/Question_2.png)
  
@@ -44,7 +44,7 @@ The graph also has a time hierarchy enabled, so it allows us to see the percenta
 
 </p>
  
- ### 1.1.3. ¿What is the day of the week and the month of the year with the highest number of questions and answers?
+ ### 1.1.3. What is the day of the week and the month of the year with the highest number of questions and answers?
  
   ![Question 3](dashboardImages/Question_3.png)
    
@@ -56,7 +56,7 @@ To better understand scatter plots, you have to: the further to the right is a p
 
 </p>
   
- ### 1.1.4. ¿Which users have the highest reputation?
+ ### 1.1.4. Which users have the highest reputation?
  
   ![Question 4](dashboardImages/Question_4.png)
   
@@ -68,7 +68,7 @@ This dashboard shows us the 10 users who have the highest reputation, the last g
 </p>
 
 
- ### 1.1.5. ¿Which users have solved the greatest number of questions?
+ ### 1.1.5. Which users have solved the greatest number of questions?
  
   ![Question 5](dashboardImages/Question_5.png)
   
@@ -82,7 +82,7 @@ In the specific case of the screenshot, it shows us the users who answered the m
 </p>
   
  
- ### 1.1.6. ¿Which questions have had the most visits?
+ ### 1.1.6. Which questions have had the most visits?
  
   ![Question 6](dashboardImages/Question_6.png)
  
@@ -95,7 +95,7 @@ This dashboard shows us the questions that were asked in a defined period either
 </p>
   
   
- ### 1.1.7. ¿What technologies are the most frequently asked questions about?
+ ### 1.1.7. What technologies are the most frequently asked questions about?
  
   ![Question 7](dashboardImages/Question_7.png)
   
@@ -106,7 +106,7 @@ The dashboard presents us with the top 10 technologies that were asked the most 
 
 </p>
   
- ### 1.1.8. ¿what are the most favorited and highest rated questions that were created over a period of time?
+ ### 1.1.8. What are the most favorited and highest rated questions that were created over a period of time?
  
   ![Question 8](dashboardImages/Question_8.png)
   
@@ -120,7 +120,7 @@ In addition, additional elements are presented that allow increasing the analyti
 </p>
   
   
- ### 1.1.9. ¿How was the behavior of the questions and answers made during the pandemic period compared to previous years?
+ ### 1.1.9. How was the behavior of the questions and answers made during the pandemic period compared to previous years?
  
   ![Question 9](dashboardImages/Question_9.png)
   
@@ -134,7 +134,7 @@ Through the interaction with the graphs we will be able to observe relevant data
 </p>
   
   
- ### 1.1.10. ¿What are the questions that have received the most feedback?
+ ### 1.1.10. What are the questions that have received the most feedback?
  
   ![Question 10](dashboardImages/Question_10.png)
   

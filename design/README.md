@@ -69,37 +69,42 @@ This is the last data layer, here the data is stored and made available for dire
 **Govern zone:**
 This zone lets administrators authorize who can take action on specific resources, for this proyect this zone gives full control, and visibility to manage Google Cloud resources centrally.
 
-**Data consumption:**
+***Data consumption:***
 Final area where BI applications are connected to the data lake, here, dashboards are generated to present key information to take decisions.
 
 ### 1.2.3 Description of the products selected for the architecture
 
-a.	Cloud Storage.  
+***a.	Cloud Storage.***  
 
 <img height="50" alt="gcp" src="architecture/GCP1.png"/>
 Google Cloud Storage is a restful online file storage service for storing and accessing data on the Google Cloud Platform infrastructure. The service combines the performance and scalability of the Google cloud with advanced security and sharing capabilities.
 
-b.	Apache Spark.
+***b.	Apache Spark.***
 
 <img height="50" alt="Spark" src="architecture/Spark.png"/>
 It is a platform that has been specifically designed for the processing of large amounts of data, that is, data from different data sources, with a wide variety, volume and speed.
 
-c.	Scala.
+***c.	Scala.***
 
 <img height="50" alt="Scala" src="architecture/Scala.png"/>
+Scala is a multi-paradigm programming language designed to express common programming patterns in a concise, elegant, and type-safe way. It subtly integrates features of functional and object-oriented languages.
+
+***d.	Databricks.***
+
+<img height="70" alt="Scala" src="architecture/Databricks.png"/>
 Databricks is an industry-leading cloud-based data engineering tool used to process and transform massive amounts of data and explore data through machine learning models.
 
-e.	Cloud IAM.
+***e.	Cloud IAM.***
 
 <img height="50" alt="IAM" src="architecture/IAMGCP.png"/>
 The Google Cloud Identity and Access Management (IAM) service allows you to create and manage permissions for Google Cloud resources. Cloud IAM unifies access control for Google Cloud services in a single system and features a consistent set of operations.
 
-f.	BigQuery.
+***f.	BigQuery.***
 
 <img height="50" alt="BigQuery" src="architecture/BigQuery.png"/>
 BigQuery is a low-cost, fully managed Google data warehouse that allows you to extract analytics from petabytes of data. It is autonomous, so there is no need to manage any infrastructure or have a database administrator.
 
-g.	Power BI.
+***g.	Power BI.***
 
 <img height="70" alt="PBI" src="architecture/PBI.png"/>
 It is a potential tool within the market that allows the implementation of visualizations to be able to build the corresponding dashboards, it is super versatile since it integrates with different types of data sources in different technologies.

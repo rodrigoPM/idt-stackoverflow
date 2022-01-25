@@ -74,23 +74,34 @@ Final area where BI applications are connected to the data lake, here, dashboard
 
 ### 1.2.3 Description of the products selected for the architecture
 
-a.	Cloud Storage.
+a.	Cloud Storage.  
 
+<img height="50" alt="gcp" src="architecture/GCP1.png"/>
 Google Cloud Storage is a restful online file storage service for storing and accessing data on the Google Cloud Platform infrastructure. The service combines the performance and scalability of the Google cloud with advanced security and sharing capabilities.
 
 b.	Apache Spark.
+
+<img height="50" alt="Spark" src="architecture/Spark.png"/>
 It is a platform that has been specifically designed for the processing of large amounts of data, that is, data from different data sources, with a wide variety, volume and speed.
 
 c.	Scala.
+
+<img height="50" alt="Scala" src="architecture/Scala.png"/>
 Databricks is an industry-leading cloud-based data engineering tool used to process and transform massive amounts of data and explore data through machine learning models.
 
 e.	Cloud IAM.
+
+<img height="50" alt="IAM" src="architecture/IAMGCP.png"/>
 The Google Cloud Identity and Access Management (IAM) service allows you to create and manage permissions for Google Cloud resources. Cloud IAM unifies access control for Google Cloud services in a single system and features a consistent set of operations.
 
 f.	BigQuery.
+
+<img height="50" alt="BigQuery" src="architecture/BigQuery.png"/>
 BigQuery is a low-cost, fully managed Google data warehouse that allows you to extract analytics from petabytes of data. It is autonomous, so there is no need to manage any infrastructure or have a database administrator.
 
 g.	Power BI.
+
+<img height="70" alt="PBI" src="architecture/PBI.png"/>
 It is a potential tool within the market that allows the implementation of visualizations to be able to build the corresponding dashboards, it is super versatile since it integrates with different types of data sources in different technologies.
 
 

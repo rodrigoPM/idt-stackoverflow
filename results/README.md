@@ -77,7 +77,8 @@ This dashboard shows us the 10 users who have the highest reputation, the last g
 
 In this dashboard you can establish a period of time to know which are the users that have provided the most answers to solve the questions asked. You can filter by year or years and by months.
 In the bar graph, the names of the users are listed from highest to lowest contribution, to their right are some interesting measures such as: The total number of answers made, the users who have contributed one or more answers and an average number of questions users respond.
-In the specific case of the screenshot, it shows us the users who answered the most questions during the year 2019, and the number of answers that each user contributed can be seen in the bar graph.
+
+In the specific case of the figure, it shows us the users who answered the most questions during the year 2019, and in the bar graph you can see the number of answers that each user provided.
 
 </p>
   

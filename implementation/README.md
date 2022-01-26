@@ -123,10 +123,10 @@ All source code of Scala is in [sourceFiles folder](sourceFiles) and all Databri
 ### 1.2.1. Cloud Storage
 All data is storing in different layers that are containing in a bucket, this bucket is hosted in GCP(Google Cloud Platform) specifically in the service called **Cloud Storage**. This bucket is accessed remotely and allow us to read and write big data, this is possible thanks to a service account provided by IAM(Identity Access Management) of GCP.
 
-Bucket's content
+Bucket's content:<br>
 ![Cloud Storage](images/cloudStorage.png)
 
-Presentation Layer
+Presentation Layer:<br>
 ![Presentation Layer](images/presentationLayer.png)
 
 ### 1.2.2. BigQuery and Power BI
@@ -134,9 +134,9 @@ All dimensionals, bridges and fact tables stored in presentation layers must be 
 
 In this project we need a tool that allow us make Business Intelligence, this tool is Power BI. Power BI allow us to connect directly to BigQuery using DirectQuery, already connected we can creating all dashboard we considers necessary to answer the analytical needs.
 
-Dimensional model in BigQuery
+Dimensional model in BigQuery:<br>
 ![Big Query](images/bigquery.png)
 
-Dimensional model in Power BI
+Dimensional model in Power BI:<br>
 ![Power BI](images/powerBI.png)
 

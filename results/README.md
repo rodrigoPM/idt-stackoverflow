@@ -16,6 +16,7 @@
     - [1.1.9. How was the behavior of the questions and answers made during the pandemic period compared to previous years?](#119-how-was-the-behavior-of-the-questions-and-answers-made-during-the-pandemic-period-compared-to-previous-years)
     - [1.1.10. What are the questions that have received the most feedback?](#1110-what-are-the-questions-that-have-received-the-most-feedback)
   - [1.2. Conclusions](#12-conclusions)
+  - [1.3. Live test of project reports](#13-live-test-of-project-reports)
      
 
 ## 1.1. Development of dashboards for the resolution of analytical needs
@@ -149,6 +150,12 @@ Additionally, visual elements are presented, such as the segmentator of periods 
 
 
 </p>
+
+## 1.3. Live test of project reports
+
+Through the following link you can view a live test of the corresponding reports previously shown, it should be noted that in order to view them you will need to log in with the corresponding institutional account of the University of El Salvador.
+
+https://tiuesedusv.sharepoint.com/:u:/s/IDT-stackoverflow/Ee5tYFQ4nopHjvkFxxFxcckBvtDjzAMlh_mIMp_DONO1eQ?e=aHB16j
 
 ## 1.2. Conclusions
 1. With the development of the dimensional models for the business processes of questions and answers made, it will allow the community of users of the Stack Overflow platform to be able to know first-hand the current state of the platform, in terms of behavior patterns. in the generation of questions and answers in specific periods of time, user behavior patterns when interacting within the platform, patterns related to the level of feedback that the questions receive, technologies most consulted during certain periods of time, among others analysis variables resulting from established business processes

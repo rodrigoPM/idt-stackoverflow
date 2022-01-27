@@ -151,12 +151,6 @@ Additionally, visual elements are presented, such as the segmentator of periods 
 
 </p>
 
-## 1.3. Live test of project reports
-
-Through the following link you can view a live test of the corresponding reports previously shown, it should be noted that in order to view them you will need to log in with the corresponding institutional account of the University of El Salvador.
-
-https://tiuesedusv.sharepoint.com/:u:/s/IDT-stackoverflow/Ee5tYFQ4nopHjvkFxxFxcckBvtDjzAMlh_mIMp_DONO1eQ?e=aHB16j
-
 ## 1.2. Conclusions
 1. With the development of the dimensional models for the business processes of questions and answers made, it will allow the community of users of the Stack Overflow platform to be able to know first-hand the current state of the platform, in terms of behavior patterns. in the generation of questions and answers in specific periods of time, user behavior patterns when interacting within the platform, patterns related to the level of feedback that the questions receive, technologies most consulted during certain periods of time, among others analysis variables resulting from established business processes
 
@@ -164,6 +158,11 @@ https://tiuesedusv.sharepoint.com/:u:/s/IDT-stackoverflow/Ee5tYFQ4nopHjvkFxxFxcc
 
 3. The creation of reports that provide a concrete solution to business requirements, allows us to really understand the enormous analytical contribution that the processed data can give organizations, the innumerable concerns, questions or needs that may arise over time. Since a report allows direct transmission of the findings found in the data, findings that can increase the success of strategic decision-making.
 
+## 1.3. Live test of project reports
+
+Through the following link you can view a live test of the corresponding reports previously shown, it should be noted that in order to view them you will need to log in with the corresponding institutional account of the University of El Salvador.
+
+https://tiuesedusv.sharepoint.com/:u:/s/IDT-stackoverflow/Ee5tYFQ4nopHjvkFxxFxcckBvtDjzAMlh_mIMp_DONO1eQ?e=aHB16j
 
 
 

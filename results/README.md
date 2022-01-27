@@ -162,9 +162,9 @@ Additionally, visual elements are presented, such as the segmentator of periods 
 
 Through the following link you can view a live test of the corresponding reports previously shown, it should be noted that in order to view them you will need to log in with the corresponding institutional account of the University of El Salvador.
 
-https://tiuesedusv.sharepoint.com/:u:/s/IDT-stackoverflow/Ee5tYFQ4nopHjvkFxxFxcckBvtDjzAMlh_mIMp_DONO1eQ?e=aHB16j
 
 
+![Live test of poject reports](https://tiuesedusv.sharepoint.com/:u:/s/IDT-stackoverflow/Ee5tYFQ4nopHjvkFxxFxcckBvtDjzAMlh_mIMp_DONO1eQ?e=aHB16j)
 
 
 
